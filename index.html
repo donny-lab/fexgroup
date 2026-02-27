@@ -73,27 +73,27 @@
 <!-- MOBILE NAV -->
 <div id="mnav">
   <button id="mnav-x" onclick="closeMobile()">✕</button>
-  <a href="#" onclick="go('home')">Home</a>
-  <a href="#" onclick="go('materials')">Materials</a>
-  <a href="#" onclick="go('services')">Services</a>
-  <a href="#" onclick="go('industries')">Industries</a>
-  <a href="#" onclick="go('recycling')">Recycling</a>
-  <a href="#" onclick="go('about')">About</a>
-  <a href="#" onclick="go('contact')">Contact</a>
+  <a href="javascript:void(0)" onclick="go('home')">Home</a>
+  <a href="javascript:void(0)" onclick="go('materials')">Materials</a>
+  <a href="javascript:void(0)" onclick="go('services')">Services</a>
+  <a href="javascript:void(0)" onclick="go('industries')">Industries</a>
+  <a href="javascript:void(0)" onclick="go('recycling')">Recycling</a>
+  <a href="javascript:void(0)" onclick="go('about')">About</a>
+  <a href="javascript:void(0)" onclick="go('contact')">Contact</a>
 </div>
 
 <!-- NAV -->
 <nav id="nav">
-  <a href="#" onclick="go('home');return false;">
+  <a href="javascript:void(0)" onclick="go('home');return false;">
     <img class="nav-logo" src="/images/logo-hq.png" alt="FeX Group of Companies">
   </a>
   <ul class="nav-links">
-    <li><a href="#" onclick="go('materials');return false;">Materials</a></li>
-    <li><a href="#" onclick="go('services');return false;">Services</a></li>
-    <li><a href="#" onclick="go('industries');return false;">Industries</a></li>
-    <li><a href="#" onclick="go('recycling');return false;">Recycling</a></li>
-    <li><a href="#" onclick="go('about');return false;">About</a></li>
-    <li><a href="#" class="nav-cta" onclick="go('contact');return false;">Get a Quote</a></li>
+    <li><a href="javascript:void(0)" onclick="go('materials');return false;">Materials</a></li>
+    <li><a href="javascript:void(0)" onclick="go('services');return false;">Services</a></li>
+    <li><a href="javascript:void(0)" onclick="go('industries');return false;">Industries</a></li>
+    <li><a href="javascript:void(0)" onclick="go('recycling');return false;">Recycling</a></li>
+    <li><a href="javascript:void(0)" onclick="go('about');return false;">About</a></li>
+    <li><a href="javascript:void(0)" class="nav-cta" onclick="go('contact');return false;">Get a Quote</a></li>
   </ul>
   <div class="hamburger" onclick="openMobile()"><span></span><span></span><span></span></div>
 </nav>
@@ -113,8 +113,8 @@
     <h1 class="hero-h1">Sourcing the<br><span>Materials</span><br>That Build<br>Industry</h1>
     <p class="hero-sub">For over 25 years, FeX Group has connected steel mills, wallboard manufacturers, and foundries with the gypsum, scrap steel, coal, and limestone they need — delivered worldwide.</p>
     <div class="hero-btns">
-      <a href="#" class="btn btn-solid" onclick="go('materials');return false;">Explore Our Materials <span class="arr"></span></a>
-      <a href="#" class="btn btn-outline" onclick="go('contact');return false;">Get a Quote <span class="arr"></span></a>
+      <a href="javascript:void(0)" class="btn btn-solid" onclick="go('materials');return false;">Explore Our Materials <span class="arr"></span></a>
+      <a href="javascript:void(0)" class="btn btn-outline" onclick="go('contact');return false;">Get a Quote <span class="arr"></span></a>
     </div>
   </div>
 </section>
@@ -198,7 +198,7 @@
       <div class="label">What We Source</div>
       <h2 class="bebas" style="font-size:var(--f-4xl);color:var(--white);margin-top:12px">Our Material Portfolio</h2>
     </div>
-    <a href="#" class="btn btn-outline" onclick="go('materials');return false;">View All Materials <span class="arr"></span></a>
+    <a href="javascript:void(0)" class="btn btn-outline" onclick="go('materials');return false;">View All Materials <span class="arr"></span></a>
   </div>
   <div class="mat-rows">
     <div class="mat-row rv">
@@ -369,7 +369,7 @@
       <div class="rec-stat"><div class="rec-stat-n">40+</div><div class="rec-stat-l">Years Ohio Valley</div></div>
       <div class="rec-stat"><div class="rec-stat-n">3</div><div class="rec-stat-l">State service area</div></div>
     </div>
-    <a href="#" class="btn btn-solid" onclick="go('recycling');return false;">Tri-State Recycling <span class="arr"></span></a>
+    <a href="javascript:void(0)" class="btn btn-solid" onclick="go('recycling');return false;">Tri-State Recycling <span class="arr"></span></a>
   </div>
   <div class="rec-photo rv d2">
     <img loading="lazy" src="/images/img04.jpg" alt="FeX Group material handler">
@@ -389,40 +389,23 @@
       <span class="cert-pill">ACAA</span>
       <span class="cert-pill">D&amp;B Verified</span>
     </div>
-    <a href="#" class="btn btn-outline" onclick="go('about');return false;" style="margin-top:28px">Our Story <span class="arr"></span></a>
+    <a href="javascript:void(0)" class="btn btn-outline" onclick="go('about');return false;" style="margin-top:28px">Our Story <span class="arr"></span></a>
   </div>
   <div class="about-right">
-    <div class="team-tile rv">
-      <div class="team-tile-top"><div class="team-initial">MT</div></div>
-      <div class="team-tile-info">
-        <div class="team-tile-name">Michael Thomas</div>
-        <div class="team-tile-role">Chief Executive Officer</div>
-        <div class="team-tile-bio">BBA Finance, University of Akron. Leads strategic direction and day-to-day operations across FeX Group's global markets.</div>
-      </div>
+    <div class="about-diff rv">
+      <div class="about-diff-n">100+</div>
+      <div class="about-diff-label">Years of Combined Expertise</div>
+      <div class="about-diff-desc">Former senior steel mill executives, metallurgical engineers, and operations managers — not career brokers.</div>
     </div>
-    <div class="team-tile rv d1">
-      <div class="team-tile-top"><div class="team-initial">DS</div></div>
-      <div class="team-tile-info">
-        <div class="team-tile-name">Doug Schaefer</div>
-        <div class="team-tile-role">VP &amp; CFO</div>
-        <div class="team-tile-bio">Franciscan University of Steubenville. Manages financial operations and corporate strategy across all business divisions.</div>
-      </div>
+    <div class="about-diff rv d1">
+      <div class="about-diff-n">1998</div>
+      <div class="about-diff-label">Founded in Mingo Junction, Ohio</div>
+      <div class="about-diff-desc">Built from the ground up in the Ohio Valley steel corridor. We know this industry from the inside.</div>
     </div>
-    <div class="team-tile rv d2">
-      <div class="team-tile-top"><div class="team-initial">JD</div></div>
-      <div class="team-tile-info">
-        <div class="team-tile-name">Jacob Decker</div>
-        <div class="team-tile-role">Mgr, Sales &amp; Logistics</div>
-        <div class="team-tile-bio">Miami University. Primary contact for material sourcing, logistics, and customer relationships across all sectors.</div>
-      </div>
-    </div>
-    <div class="team-tile rv d3">
-      <div class="team-tile-top"><div class="team-initial">RM</div></div>
-      <div class="team-tile-info">
-        <div class="team-tile-name">Rebecca McConnell</div>
-        <div class="team-tile-role">Mgr, Administration</div>
-        <div class="team-tile-bio">Manages administrative operations for FeX Group's Mingo Junction headquarters across all operational divisions.</div>
-      </div>
+    <div class="about-diff rv d2">
+      <div class="about-diff-n">Global</div>
+      <div class="about-diff-label">Domestic &amp; International Operations</div>
+      <div class="about-diff-desc">Ocean vessel logistics, international port operations, and supplier relationships spanning multiple continents.</div>
     </div>
   </div>
 </section>
@@ -437,8 +420,8 @@
       <p>25+ years of expertise connecting buyers and sellers worldwide. Our team responds within one business day.</p>
     </div>
     <div class="cta-btns">
-      <a href="#" class="btn btn-solid" onclick="go('contact');return false;">Get a Quote <span class="arr"></span></a>
-      <a href="#" class="btn btn-outline" onclick="go('materials');return false;" style="font-size:15px">View Our Materials <span class="arr"></span></a>
+      <a href="javascript:void(0)" class="btn btn-solid" onclick="go('contact');return false;">Get a Quote <span class="arr"></span></a>
+      <a href="javascript:void(0)" class="btn btn-outline" onclick="go('materials');return false;" style="font-size:15px">View Our Materials <span class="arr"></span></a>
     </div>
   </div>
 </div>
@@ -466,7 +449,7 @@
     <canvas id="cta-wave2"></canvas>
     <div style="position:relative;z-index:1;display:contents">
       <div><h2 style="font-family:Bebas Neue,sans-serif;font-size:clamp(42px,5vw,64px);color:#fff;line-height:.95">Have a specific<br>material need?</h2><p style="font-size:var(--f-lg);color:rgba(255,255,255,.78);margin-top:12px">We source to your specifications.</p></div>
-      <a href="#" class="btn btn-white" onclick="go('contact');return false;">Discuss Your Needs <span class="arr" style="color:var(--blue)"></span></a>
+      <a href="javascript:void(0)" class="btn btn-white" onclick="go('contact');return false;">Discuss Your Needs <span class="arr" style="color:var(--blue)"></span></a>
     </div>
   </div>
 </div>
@@ -492,7 +475,7 @@
     <div class="sfc" style="background:rgba(42,128,204,.06);border:1px solid rgba(42,128,204,.14)">
       <div style="font-family:'Bebas Neue',sans-serif;font-size:36px;color:var(--white);margin-bottom:16px;letter-spacing:.02em;line-height:1.1">Have a challenge<br>not listed here?</div>
       <p class="sfc-desc" style="margin-bottom:28px">Our team has addressed unique material challenges for decades. If you have a sourcing problem, logistics challenge, or processing need — we want to hear it.</p>
-      <a href="#" class="btn btn-solid" onclick="go('contact');return false;">Talk to Our Team <span class="arr"></span></a>
+      <a href="javascript:void(0)" class="btn btn-solid" onclick="go('contact');return false;">Talk to Our Team <span class="arr"></span></a>
     </div>
   </div>
 </div>
@@ -521,7 +504,7 @@
       <div class="label">Work With Us</div>
       <h2 class="bebas" style="font-size:var(--f-3xl);color:var(--white);margin-top:12px;line-height:.95">Ready to discuss<br>your material needs?</h2>
     </div>
-    <a href="#" class="btn btn-solid" onclick="go('contact');return false;">Get a Quote <span class="arr"></span></a>
+    <a href="javascript:void(0)" class="btn btn-solid" onclick="go('contact');return false;">Get a Quote <span class="arr"></span></a>
   </div>
 </div>
 
@@ -563,7 +546,7 @@
     </div>
     <div class="scrap-band">
       <div><h3>We Pay Cash for Scrap</h3><p>Over $300,000 back into the Ohio Valley every year.</p></div>
-      <a href="#" class="btn btn-white" onclick="go('contact');return false;">Contact Us <span class="arr" style="color:var(--blue)"></span></a>
+      <a href="javascript:void(0)" class="btn btn-white" onclick="go('contact');return false;">Contact Us <span class="arr" style="color:var(--blue)"></span></a>
     </div>
   </div>
 </div>
@@ -607,7 +590,7 @@
       <div class="label">Let's Work Together</div>
       <h2 class="bebas" style="font-size:var(--f-3xl);color:var(--white);margin-top:12px;line-height:.95">25 Years of Expertise.<br><span style="color:var(--blue2)">Ready to Put to Work.</span></h2>
     </div>
-    <a href="#" class="btn btn-solid" onclick="go('contact');return false;">Get a Quote <span class="arr"></span></a>
+    <a href="javascript:void(0)" class="btn btn-solid" onclick="go('contact');return false;">Get a Quote <span class="arr"></span></a>
   </div>
 </div>
 
@@ -682,31 +665,31 @@
     <div>
       <div class="ft-col-h">Materials</div>
       <ul class="ft-links">
-        <li><a href="#" onclick="go('materials');return false;">Gypsum</a></li>
-        <li><a href="#" onclick="go('materials');return false;">Scrap Steel</a></li>
-        <li><a href="#" onclick="go('materials');return false;">Steel Byproducts</a></li>
-        <li><a href="#" onclick="go('materials');return false;">Coal &amp; Limestone</a></li>
-        <li><a href="#" onclick="go('materials');return false;">Non-Ferrous Scrap</a></li>
+        <li><a href="javascript:void(0)" onclick="go('materials');return false;">Gypsum</a></li>
+        <li><a href="javascript:void(0)" onclick="go('materials');return false;">Scrap Steel</a></li>
+        <li><a href="javascript:void(0)" onclick="go('materials');return false;">Steel Byproducts</a></li>
+        <li><a href="javascript:void(0)" onclick="go('materials');return false;">Coal &amp; Limestone</a></li>
+        <li><a href="javascript:void(0)" onclick="go('materials');return false;">Non-Ferrous Scrap</a></li>
       </ul>
     </div>
     <div>
       <div class="ft-col-h">Services</div>
       <ul class="ft-links">
-        <li><a href="#" onclick="go('services');return false;">Raw Materials Brokerage</a></li>
-        <li><a href="#" onclick="go('services');return false;">Logistics Management</a></li>
-        <li><a href="#" onclick="go('services');return false;">Steel Mill Advisory</a></li>
-        <li><a href="#" onclick="go('services');return false;">Customized Briquettes</a></li>
-        <li><a href="#" onclick="go('services');return false;">On-Site Remediation</a></li>
-        <li><a href="#" onclick="go('recycling');return false;">Tri-State Recycling</a></li>
+        <li><a href="javascript:void(0)" onclick="go('services');return false;">Raw Materials Brokerage</a></li>
+        <li><a href="javascript:void(0)" onclick="go('services');return false;">Logistics Management</a></li>
+        <li><a href="javascript:void(0)" onclick="go('services');return false;">Steel Mill Advisory</a></li>
+        <li><a href="javascript:void(0)" onclick="go('services');return false;">Customized Briquettes</a></li>
+        <li><a href="javascript:void(0)" onclick="go('services');return false;">On-Site Remediation</a></li>
+        <li><a href="javascript:void(0)" onclick="go('recycling');return false;">Tri-State Recycling</a></li>
       </ul>
     </div>
     <div>
       <div class="ft-col-h">Company</div>
       <ul class="ft-links">
-        <li><a href="#" onclick="go('about');return false;">About FeX Group</a></li>
-        <li><a href="#" onclick="go('industries');return false;">Industries</a></li>
-        <li><a href="#" onclick="go('recycling');return false;">Recycling</a></li>
-        <li><a href="#" onclick="go('contact');return false;">Contact Us</a></li>
+        <li><a href="javascript:void(0)" onclick="go('about');return false;">About FeX Group</a></li>
+        <li><a href="javascript:void(0)" onclick="go('industries');return false;">Industries</a></li>
+        <li><a href="javascript:void(0)" onclick="go('recycling');return false;">Recycling</a></li>
+        <li><a href="javascript:void(0)" onclick="go('contact');return false;">Contact Us</a></li>
       </ul>
     </div>
   </div>

@@ -53,13 +53,13 @@ function initCtaWave(){
     svg.setAttribute('id',id);
     svg.style.cssText='position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible;';
     const configs=[
-      {amp:28,freq:0.0018,speed:0.009,y:0.12,alpha:0.12},
-      {amp:38,freq:0.0024,speed:0.007,y:0.25,alpha:0.18},
-      {amp:44,freq:0.0016,speed:0.011,y:0.38,alpha:0.22},
-      {amp:36,freq:0.0028,speed:0.008,y:0.50,alpha:0.28},
-      {amp:42,freq:0.0020,speed:0.010,y:0.62,alpha:0.22},
-      {amp:32,freq:0.0022,speed:0.006,y:0.75,alpha:0.18},
-      {amp:26,freq:0.0017,speed:0.012,y:0.88,alpha:0.12},
+      {amp:32,freq:0.0018,speed:0.009,y:0.10,alpha:0.22},
+      {amp:42,freq:0.0024,speed:0.007,y:0.24,alpha:0.32},
+      {amp:50,freq:0.0016,speed:0.011,y:0.38,alpha:0.40},
+      {amp:44,freq:0.0028,speed:0.008,y:0.52,alpha:0.48},
+      {amp:48,freq:0.0020,speed:0.010,y:0.65,alpha:0.40},
+      {amp:38,freq:0.0022,speed:0.006,y:0.78,alpha:0.32},
+      {amp:28,freq:0.0017,speed:0.012,y:0.90,alpha:0.22},
     ];
     const waves=configs.map(function(cfg,i){
       const path=document.createElementNS('http://www.w3.org/2000/svg','path');
