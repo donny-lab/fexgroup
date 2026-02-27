@@ -106,6 +106,12 @@ img{display:block;max-width:100%;height:auto}
 }
 .btn-solid{background:var(--blue);color:var(--white);padding:16px 36px}
 .btn-solid:hover{background:var(--blue2);gap:18px}
+.btn-ghost{
+  color:var(--snow);padding:16px 36px;
+  border:1.5px solid rgba(240,237,232,.35);
+  border-radius:0;transition:border-color .2s,color .2s;
+}
+.btn-ghost:hover{border-color:var(--white);color:var(--white);}
 .btn-outline{
   color:var(--snow);
   border-bottom:1.5px solid rgba(240,237,232,.3);
