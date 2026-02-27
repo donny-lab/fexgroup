@@ -68,6 +68,7 @@
 <body>
 
 <canvas id="wave-canvas"></canvas>
+<button id="float-cta" onclick="go('contact')">Get a Quote</button>
 
 <!-- MOBILE NAV -->
 <div id="mnav">
@@ -167,7 +168,6 @@
       <div class="gyp-spec-row"><b>Industries</b> — Cement · Agriculture · Wallboard</div>
       <div class="gyp-spec-row"><b>Logistics</b> — Ocean Vessel · Rail · Truck</div>
     </div>
-    <a href="#" class="btn btn-solid" onclick="go('materials');return false;">View All Materials <span class="arr"></span></a>
   </div>
   <div class="gyp-right">
     <div class="wheel-viewport" id="wheel">
@@ -335,7 +335,6 @@
     <h2 class="bebas">Global Operations<br><span style="color:var(--blue2)">at Scale</span></h2>
     <p class="body" style="margin-bottom:14px">From international port operations loading ocean vessels with gypsum, to our Mingo Junction processing yard — FeX Group operates at every stage of the material supply chain.</p>
     <p class="body">Our capability to move material by truck, rail, barge, or ocean vessel means your supply chain never has a single point of failure.</p>
-    <a href="#" class="btn btn-solid" onclick="go('contact');return false;" style="margin-top:28px">Request a Quote <span class="arr"></span></a>
   </div>
   <div class="vid-right" id="vid-right" onclick="loadYT()">
     <div class="vid-thumb" id="vid-thumb">
@@ -437,7 +436,7 @@
       <h2>Sourcing. Logistics.<br><span style="color:var(--blue2)">Done Right.</span></h2>
       <p>25+ years of expertise connecting buyers and sellers worldwide. Our team responds within one business day.</p>
     </div>
-    <div style="display:flex;flex-direction:column;gap:16px;align-items:flex-start;flex-shrink:0">
+    <div class="cta-btns">
       <a href="#" class="btn btn-solid" onclick="go('contact');return false;">Get a Quote <span class="arr"></span></a>
       <a href="#" class="btn btn-outline" onclick="go('materials');return false;" style="font-size:15px">View Our Materials <span class="arr"></span></a>
     </div>
@@ -629,7 +628,7 @@
         <h2 class="bebas">Three Locations,<br>One Team</h2>
         <p class="body-lg">All three Mingo Junction locations are staffed by the same expert team. Reach us by phone, email, or stop in during business hours.</p>
         <div class="locs">
-          <div class="loc"><div class="loc-type">HQ — Sales, Transportation &amp; Accounting</div><div class="loc-addr">1058 Commercial Ave., Mingo Junction, OH 43938<br><a href="tel:4126040400">412.604.0400</a> · <a href="/cdn-cgi/l/email-protection#a4cdcac2cbe4c2c1dcc3d6cbd1d48ac7cbc9"><span class="__cf_email__" data-cfemail="4c25222a230c2a29342b3e23393c622f2321">[email&#160;protected]</span></a></div></div>
+          <div class="loc"><div class="loc-type">HQ — Sales, Transportation &amp; Accounting</div><div class="loc-addr">1058 Commercial Ave., Mingo Junction, OH 43938<br><a href="tel:4126040400">412.604.0400</a> · <a href="mailto:info@fexgroup.com">info@fexgroup.com</a></div></div>
           <div class="loc"><div class="loc-type">Scale House &amp; Tri-State Recycling</div><div class="loc-addr">2200 Commercial Avenue, Mingo Junction, OH 43938<br><a href="tel:7405358148">740.535.8148</a> · Mon–Fri 7:00 AM – 3:00 PM</div></div>
           <div class="loc"><div class="loc-type">Processing Yard</div><div class="loc-addr">1130 Commercial Ave., Mingo Junction, OH 43938<br><a href="tel:7405358148">740.535.8148</a></div></div>
         </div>
@@ -717,6 +716,6 @@
   </div>
 </footer>
 
-<script src="/js/main.js" defer></script>
+<script src="/js/main.js"></script>
 </body>
 </html>

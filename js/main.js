@@ -116,46 +116,33 @@ function initCtaWave(){
   });
 }
 
-// Init all wave canvases
-const bgWave = new WaveCanvas('wave-canvas', {alpha:1, lineCount:7, ampBase:50, ampVar:40, speed:0.005});
-new WaveCanvas('hero-wave', {alpha:1, lineCount:5, color:'82,168,245', ampBase:35, ampVar:25, speed:0.007});
-initCtaWave();
-// cta-wave2 handled by initCtaWave()
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// INIT — runs after DOM is ready
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-// NAV
-// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-window.addEventListener('scroll', () => {
-  document.getElementById('nav').classList.toggle('stuck', window.scrollY > 60);
-});
-
-// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-// PAGE ROUTING
-// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 function go(pg){
   closeMobile();
   document.querySelectorAll('.pg').forEach(el => el.classList.remove('active'));
   const el = document.getElementById('pg-' + pg);
   if(el){ el.classList.add('active'); window.scrollTo({top:0,behavior:'instant'}); setTimeout(revealAll, 80); }
+  // Update active nav link
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.classList.toggle('active', a.getAttribute('onclick') && a.getAttribute('onclick').includes("'" + pg + "'"));
+  });
   return false;
 }
+
 function openMobile(){ document.getElementById('mnav').classList.add('open'); document.body.style.overflow='hidden'; }
+
 function closeMobile(){ document.getElementById('mnav').classList.remove('open'); document.body.style.overflow=''; }
 
-// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-// SCROLL REVEAL
-// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 function revealAll(){
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); } });
   }, {threshold: 0.08});
   document.querySelectorAll('.pg.active .rv').forEach(el => obs.observe(el));
 }
-revealAll();
 
-// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-// STAT COUNTER
-// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 function countUp(el, target, suffix){
   let start = 0, dur = 1400, step = 16;
   const inc = target / (dur / step);
@@ -165,17 +152,6 @@ function countUp(el, target, suffix){
     el.textContent = Math.floor(start) + (suffix||'');
   }, step);
 }
-setTimeout(() => {
-  document.querySelectorAll('.stat-n[data-count]').forEach(el => {
-    countUp(el, parseInt(el.dataset.count), el.dataset.count === '100' ? '+' : '+');
-  });
-}, 400);
-
-// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-// VERTICAL IMAGE WHEEL
-// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-const WHEEL_LABELS = ['International Port Operations','Natural Rock Gypsum','Port Crane Loading','Ocean Vessel Loading'];
-let wheelIdx = 0, wheelTimer;
 
 function wheelGo(n){
   const slides = document.querySelectorAll('.wheel-slide');
@@ -194,13 +170,11 @@ function wheelGo(n){
   clearInterval(wheelTimer);
   wheelTimer = setInterval(() => wheelNext(), 4000);
 }
-function wheelNext(){ wheelGo(wheelIdx + 1); }
-function wheelPrev(){ wheelGo(wheelIdx - 1); }
-wheelTimer = setInterval(wheelNext, 4000);
 
-// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-// LOGISTICS CANVAS — comet trail reaching all 4 nodes
-// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+function wheelNext(){ wheelGo(wheelIdx + 1); }
+
+function wheelPrev(){ wheelGo(wheelIdx - 1); }
+
 function initLogCanvas(){
   const canvas = document.getElementById('log-canvas');
   const diag = document.getElementById('log-diagram');
@@ -300,11 +274,7 @@ function initLogCanvas(){
   }
   draw();
 }
-setTimeout(initLogCanvas, 500);
 
-// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-// YOUTUBE CLICK TO LOAD
-// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 function loadYT(){
   const wrap = document.getElementById('vid-right');
   const thumb = document.getElementById('vid-thumb');
@@ -319,17 +289,9 @@ function loadYT(){
 }
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-// FORM
+// GLOBAL FUNCTIONS (accessible from onclick=)
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-document.getElementById('ft').value = Date.now();
-// ── CONTACT FORM ──────────────────────────────────
-// To activate real email delivery:
-// 1. Create a free account at formspree.io
-// 2. Create a new form and copy your endpoint ID
-// 3. Replace 'YOUR_FORMSPREE_ID' below with it
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORMSPREE_ID';
-
-async function handleForm(e){
+function handleForm(e){
   e.preventDefault();
   const form = e.target, resp = document.getElementById('fr');
   // Honeypot
@@ -386,3 +348,123 @@ async function handleForm(e){
   btn.textContent = origText; btn.disabled = false;
   resp.scrollIntoView({behavior:'smooth',block:'nearest'});
 }
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// INIT — runs after DOM is ready
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// CONTACT FORM
+// To wire up real email: sign up at formspree.io,
+// create a form, paste your ID below.
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+const FORMSPREE_ID = 'YOUR_FORMSPREE_ID';
+
+async function handleForm(e){
+  e.preventDefault();
+  const form = e.target, resp = document.getElementById('fr');
+  if(form.website.value !== '') return;
+  if((Date.now() - parseInt(document.getElementById('ft').value)) / 1000 < 3) return;
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.em.value)){
+    resp.style.display='block'; resp.className='form-resp err';
+    resp.textContent='Please enter a valid email address.'; return;
+  }
+  const btn = form.querySelector('.form-btn');
+  const origText = btn.textContent;
+  btn.textContent='Sending…'; btn.disabled=true;
+  resp.style.display='none';
+
+  if(FORMSPREE_ID !== 'YOUR_FORMSPREE_ID'){
+    try {
+      const res = await fetch('https://formspree.io/f/' + FORMSPREE_ID, {
+        method:'POST',
+        headers:{'Content-Type':'application/json','Accept':'application/json'},
+        body: JSON.stringify({
+          firstName: form.fn.value, lastName: form.ln.value,
+          email: form.em.value, phone: form.ph.value,
+          company: form.co.value, interest: form.inq.value,
+          message: form.msg.value
+        })
+      });
+      if(res.ok){
+        resp.style.display='block'; resp.className='form-resp ok';
+        resp.textContent='Thank you — we\'ll respond within one business day.';
+        form.reset(); document.getElementById('ft').value=Date.now();
+      } else { throw new Error(); }
+    } catch(err){
+      resp.style.display='block'; resp.className='form-resp err';
+      resp.textContent='Something went wrong. Please call 740.535.8148.';
+    }
+  } else {
+    resp.style.display='block'; resp.className='form-resp ok';
+    resp.textContent='Thank you — we\'ll respond within one business day.';
+    form.reset(); document.getElementById('ft').value=Date.now();
+  }
+  btn.textContent=origText; btn.disabled=false;
+  resp.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// INIT
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+document.addEventListener('DOMContentLoaded', function(){
+// Init all wave canvases
+const bgWave = new WaveCanvas('wave-canvas', {alpha:1, lineCount:7, ampBase:50, ampVar:40, speed:0.005});
+new WaveCanvas('hero-wave', {alpha:1, lineCount:5, color:'82,168,245', ampBase:35, ampVar:25, speed:0.007});
+initCtaWave();
+// cta-wave2 handled by initCtaWave()
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// NAV
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('stuck', window.scrollY > 60);
+  const fc = document.getElementById('float-cta');
+  if(fc) fc.classList.toggle('visible', window.scrollY > 400);
+});
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// PAGE ROUTING
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// SCROLL REVEAL
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+revealAll();
+// Set initial active nav (home page is active on load)
+document.querySelectorAll('.nav-links a').forEach(a => {
+  if(a.getAttribute('onclick') && a.getAttribute('onclick').includes("'home'")) a.classList.add('active');
+});
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// STAT COUNTER
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+setTimeout(() => {
+  document.querySelectorAll('.stat-n[data-count]').forEach(el => {
+    countUp(el, parseInt(el.dataset.count), el.dataset.count === '100' ? '+' : '+');
+  });
+}, 400);
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// VERTICAL IMAGE WHEEL
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+const WHEEL_LABELS = ['International Port Operations','Natural Rock Gypsum','Port Crane Loading','Ocean Vessel Loading'];
+let wheelIdx = 0, wheelTimer;
+
+wheelTimer = setInterval(wheelNext, 4000);
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// LOGISTICS CANVAS — comet trail reaching all 4 nodes
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+setTimeout(initLogCanvas, 500);
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// YOUTUBE CLICK TO LOAD
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// FORM
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+document.getElementById('ft').value = Date.now();
+  document.getElementById('ft').value = Date.now();
+});
