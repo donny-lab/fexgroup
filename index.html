@@ -505,6 +505,12 @@ footer{background:var(--ink);padding:80px var(--padx) 40px;border-top:1px solid 
 .page-cta-band h2{font-family:'Bebas Neue',sans-serif;font-size:var(--f-3xl);color:var(--white);line-height:.95}
 .page-cta-band .label{margin-bottom:14px}
 
+/* DIVISION PAGE SECTION HEADERS (FeX / FeX Minerals) */
+.div-head{background:var(--ink2);padding:72px var(--padx) 0}
+.div-head .bebas{font-size:var(--f-3xl);color:var(--white);margin-top:10px}
+.div-head + .mat-full-list,.div-head + .ind-full{padding-top:40px}
+.mat-full-list + .div-head{padding-top:0}
+
 /* AI SEO — visually hidden but machine-readable content block */
 .ai-context{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;left:-9999px}
 
@@ -607,6 +613,8 @@ footer{background:var(--ink);padding:80px var(--padx) 40px;border-top:1px solid 
   #float-cta{display:block}
   .page-cta-band{flex-direction:column;align-items:flex-start;padding:48px 20px;gap:24px}
   .page-cta-band .btn{width:100%}
+  .div-head{padding:48px 20px 0}
+  .div-head + .mat-full-list,.div-head + .ind-full{padding-top:28px}
 }
 </style>
 </head>
@@ -639,9 +647,9 @@ Certifications: ReMA (Recycled Materials Association), AIST (Association for Iro
 <div id="mnav">
   <button id="mnav-x" onclick="closeMobile()">✕</button>
   <a onclick="go('home')">Home</a>
-  <a onclick="go('materials')">Materials</a>
+  <a onclick="go('fex')">FeX</a>
+  <a onclick="go('minerals')">FeX Minerals</a>
   <a onclick="go('services')">Services</a>
-  <a onclick="go('industries')">Industries</a>
   <a onclick="go('recycling')">Recycling</a>
   <a onclick="go('about')">About</a>
   <a onclick="go('contact')">Contact</a>
@@ -653,9 +661,9 @@ Certifications: ReMA (Recycled Materials Association), AIST (Association for Iro
     <img class="nav-logo" src="/images/logo-hq.png" alt="FeX Group — Raw Materials Brokerage">
   </a>
   <ul class="nav-links">
-    <li><a onclick="go('materials')" id="nl-materials">Materials</a></li>
+    <li><a onclick="go('fex')" id="nl-fex">FeX</a></li>
+    <li><a onclick="go('minerals')" id="nl-minerals">FeX Minerals</a></li>
     <li><a onclick="go('services')" id="nl-services">Services</a></li>
-    <li><a onclick="go('industries')" id="nl-industries">Industries</a></li>
     <li><a onclick="go('recycling')" id="nl-recycling">Recycling</a></li>
     <li><a onclick="go('about')" id="nl-about">About</a></li>
     <li><a onclick="go('contact')" class="nav-cta">Get a Quote</a></li>
@@ -677,7 +685,7 @@ Certifications: ReMA (Recycled Materials Association), AIST (Association for Iro
     <div class="hero-location">Mingo Junction, Ohio · Est. 1998</div>
     <p class="hero-sub">For over 25 years, FeX Group has connected steel mills, wallboard manufacturers, and coal-fired power plants with the gypsum, scrap steel, coal, and limestone they need — delivered worldwide.</p>
     <div class="hero-btns">
-      <a class="btn btn-solid" onclick="go('materials')">Explore Our Materials <span class="arr"></span></a>
+      <a class="btn btn-solid" onclick="go('fex')">Explore Our Materials <span class="arr"></span></a>
       <a class="btn btn-outline" onclick="go('contact')">Get a Quote <span class="arr"></span></a>
     </div>
   </div>
@@ -756,14 +764,15 @@ Certifications: ReMA (Recycled Materials Association), AIST (Association for Iro
       <div class="label">What We Source</div>
       <h2 id="mat-title" class="bebas" style="font-size:var(--f-4xl);color:var(--white);margin-top:12px">Our Material Portfolio</h2>
     </div>
-    <a class="btn btn-outline" onclick="go('materials')">View All Materials <span class="arr"></span></a>
+    <a class="btn btn-outline" onclick="go('fex')">View All Materials <span class="arr"></span></a>
   </div>
   <div class="mat-rows">
-    <div class="mat-row rv"><div class="mat-row-bg" style="background-image:url('/images/port-wide.jpg')"></div><div class="mat-row-vg"></div><div class="mat-row-inner"><div class="mat-big-n">01</div><div class="mat-info"><div class="mat-featured-pill">● 50%+ of Business</div><div class="mat-name">Gypsum</div><div class="mat-sub">Natural rock and FGD gypsum — domestic and international. Cement, agriculture, wallboard.</div></div><div class="mat-tag">Primary Material →</div></div></div>
-    <div class="mat-row rv d1"><div class="mat-row-bg" style="background-image:url('/images/structural-plate.jpg')"></div><div class="mat-row-vg"></div><div class="mat-row-inner"><div class="mat-big-n">02</div><div class="mat-info"><div class="mat-name">Scrap Steel</div><div class="mat-sub">Industrial waste streams, demolition partnerships, and 100+ roll-off containers across the tri-state region.</div></div><div class="mat-tag">Ferrous Scrap →</div></div></div>
-    <div class="mat-row rv d2"><div class="mat-row-bg" style="background-image:url('/images/raw-materials.jpg')"></div><div class="mat-row-vg"></div><div class="mat-row-inner"><div class="mat-big-n">03</div><div class="mat-info"><div class="mat-name">Steel Byproducts</div><div class="mat-sub">Blast furnace iron, tundish, pit scrap, mill scale. 25+ years as a leading broker.</div></div><div class="mat-tag">Blast Furnace · EAF →</div></div></div>
-    <div class="mat-row rv d3"><div class="mat-row-bg" style="background-image:url('/images/autocast.jpg')"></div><div class="mat-row-vg"></div><div class="mat-row-inner"><div class="mat-big-n">04</div><div class="mat-info"><div class="mat-name">Coal &amp; Limestone</div><div class="mat-sub">Sourcing coal for coal-fired power plants and limestone for industrial applications. Proven logistics across the Ohio Valley.</div></div><div class="mat-tag">Power · Cement →</div></div></div>
-    <div class="mat-row rv d4"><div class="mat-row-bg" style="background-image:url('/images/port-quay.jpg')"></div><div class="mat-row-vg"></div><div class="mat-row-inner"><div class="mat-big-n">05</div><div class="mat-info"><div class="mat-name">Non-Ferrous Scrap</div><div class="mat-sub">Aluminum, copper, brass, and stainless steel. Industrial accounts and public walk-in accepted.</div></div><div class="mat-tag">Multi-Metal →</div></div></div>
+    <div class="mat-row rv" onclick="go('minerals')" style="cursor:pointer"><div class="mat-row-bg" style="background-image:url('/images/port-wide.jpg')"></div><div class="mat-row-vg"></div><div class="mat-row-inner"><div class="mat-big-n">01</div><div class="mat-info"><div class="mat-featured-pill">● 50%+ of Business</div><div class="mat-name">Gypsum</div><div class="mat-sub">Natural rock and FGD gypsum — domestic and international. Cement, agriculture, wallboard.</div></div><div class="mat-tag">FeX Minerals →</div></div></div>
+    <div class="mat-row rv d1" onclick="go('minerals')" style="cursor:pointer"><div class="mat-row-bg" style="background-image:url('/images/autocast.jpg')"></div><div class="mat-row-vg"></div><div class="mat-row-inner"><div class="mat-big-n">02</div><div class="mat-info"><div class="mat-name">Coal</div><div class="mat-sub">Sourcing coal for coal-fired power generation. Proven Ohio Valley supplier relationships and logistics.</div></div><div class="mat-tag">FeX Minerals →</div></div></div>
+    <div class="mat-row rv d2" onclick="go('minerals')" style="cursor:pointer"><div class="mat-row-bg" style="background-image:url('/images/port-crane.jpg')"></div><div class="mat-row-vg"></div><div class="mat-row-inner"><div class="mat-big-n">03</div><div class="mat-info"><div class="mat-name">Limestone</div><div class="mat-sub">Limestone for cement production, steelmaking flux, and industrial applications.</div></div><div class="mat-tag">FeX Minerals →</div></div></div>
+    <div class="mat-row rv d3" onclick="go('fex')" style="cursor:pointer"><div class="mat-row-bg" style="background-image:url('/images/structural-plate.jpg')"></div><div class="mat-row-vg"></div><div class="mat-row-inner"><div class="mat-big-n">04</div><div class="mat-info"><div class="mat-name">Scrap Steel</div><div class="mat-sub">Industrial waste streams, demolition partnerships, and 100+ roll-off containers across the tri-state region.</div></div><div class="mat-tag">FeX →</div></div></div>
+    <div class="mat-row rv d4" onclick="go('fex')" style="cursor:pointer"><div class="mat-row-bg" style="background-image:url('/images/raw-materials.jpg')"></div><div class="mat-row-vg"></div><div class="mat-row-inner"><div class="mat-big-n">05</div><div class="mat-info"><div class="mat-name">Steel Byproducts</div><div class="mat-sub">Blast furnace iron, tundish, pit scrap, mill scale. 25+ years as a leading broker.</div></div><div class="mat-tag">FeX →</div></div></div>
+    <div class="mat-row rv d5" onclick="go('fex')" style="cursor:pointer"><div class="mat-row-bg" style="background-image:url('/images/port-quay.jpg')"></div><div class="mat-row-vg"></div><div class="mat-row-inner"><div class="mat-big-n">06</div><div class="mat-info"><div class="mat-name">Non-Ferrous</div><div class="mat-sub">Aluminum, copper, brass, and stainless steel. Industrial accounts and public walk-in accepted.</div></div><div class="mat-tag">FeX →</div></div></div>
   </div>
 </section>
 
@@ -800,12 +809,12 @@ Certifications: ReMA (Recycled Materials Association), AIST (Association for Iro
     <p class="body-lg">Our materials and expertise span the industries that form the backbone of American manufacturing and energy production.</p>
   </div>
   <div class="ind-list">
-    <div class="ind-item rv"><div class="ind-num">01</div><div class="ind-name">Iron &amp; Steel Mills</div><div class="ind-desc">Scrap steel, byproducts, briquettes, and technical advisory for blast furnace, EAF, and BOF operations. Former mill executives on staff.</div></div>
-    <div class="ind-item rv d1"><div class="ind-num">02</div><div class="ind-name">Wallboard Manufacturing</div><div class="ind-desc">Natural rock and FGD gypsum for drywall production at scale. Off-spec washing capability for consistent quality.</div></div>
-    <div class="ind-item rv d2"><div class="ind-num">03</div><div class="ind-name">Cement Production</div><div class="ind-desc">Gypsum as setting retarder, limestone as feedstock, mill scale as corrective material. All three sourced and delivered.</div></div>
-    <div class="ind-item rv d3"><div class="ind-num">04</div><div class="ind-name">Agriculture</div><div class="ind-desc">FGD and natural gypsum as soil amendments for large-scale operations. Improves soil structure without affecting pH.</div></div>
-    <div class="ind-item rv d4"><div class="ind-num">05</div><div class="ind-name">Power Generation</div><div class="ind-desc">Coal sourcing for plant operations and FGD gypsum recovery from waste streams. A circular model that benefits all parties.</div></div>
-    <div class="ind-item rv d5"><div class="ind-num">06</div><div class="ind-name">Foundry</div><div class="ind-desc">Specialized scrap grades and byproduct materials. Metallurgical engineers on staff process to your exact furnace specifications.</div></div>
+    <div class="ind-item rv" onclick="go('fex')" style="cursor:pointer"><div class="ind-num">01</div><div class="ind-name">Steel Mills</div><div class="ind-desc">Scrap steel, byproducts, briquettes, and technical advisory for blast furnace, EAF, and BOF operations. Former mill executives on staff.</div></div>
+    <div class="ind-item rv d1" onclick="go('fex')" style="cursor:pointer"><div class="ind-num">02</div><div class="ind-name">Foundries</div><div class="ind-desc">Specialized scrap grades and byproduct materials. Metallurgical engineers on staff process to your exact furnace specifications.</div></div>
+    <div class="ind-item rv d2" onclick="go('minerals')" style="cursor:pointer"><div class="ind-num">03</div><div class="ind-name">Wallboard Manufacturing</div><div class="ind-desc">Natural rock and FGD gypsum for drywall production at scale. Off-spec washing capability for consistent quality.</div></div>
+    <div class="ind-item rv d3" onclick="go('minerals')" style="cursor:pointer"><div class="ind-num">04</div><div class="ind-name">Cement Production</div><div class="ind-desc">Gypsum as setting retarder, limestone as feedstock, mill scale as corrective material. All three sourced and delivered.</div></div>
+    <div class="ind-item rv d4" onclick="go('minerals')" style="cursor:pointer"><div class="ind-num">05</div><div class="ind-name">Agriculture</div><div class="ind-desc">FGD and natural gypsum as soil amendments for large-scale operations. Improves soil structure without affecting pH.</div></div>
+    <div class="ind-item rv d5" onclick="go('minerals')" style="cursor:pointer"><div class="ind-num">06</div><div class="ind-name">Power Generation</div><div class="ind-desc">Coal sourcing for plant operations and FGD gypsum recovery from waste streams. A circular model that benefits all parties.</div></div>
   </div>
 </section>
 
@@ -901,30 +910,37 @@ Certifications: ReMA (Recycled Materials Association), AIST (Association for Iro
     </div>
     <div class="cta-btns">
       <a class="btn btn-solid" onclick="go('contact')">Get a Quote <span class="arr"></span></a>
-      <a class="btn btn-outline" onclick="go('materials')">View Our Materials <span class="arr"></span></a>
+      <a class="btn btn-outline" onclick="go('minerals')">View Our Materials <span class="arr"></span></a>
     </div>
   </div>
 </div>
 
 </div><!-- /home -->
 
-<!-- ══ MATERIALS ══ -->
-<div id="pg-materials" class="pg">
+<!-- ══ FeX (METALS) ══ -->
+<div id="pg-fex" class="pg">
   <div class="inner-hero">
-    <div class="inner-hero-bg" style="background-image:url('/images/port-wide.jpg')"></div>
+    <div class="inner-hero-bg" style="background-image:url('/images/img04.jpg')"></div>
     <div class="inner-hero-cnt">
-      <div class="label">Material Portfolio</div>
-      <h1 class="bebas">What We Source<br>&amp; Deliver</h1>
-      <p>From gypsum and scrap steel to coal and limestone — an extensive domestic and international sourcing network built over 25 years.</p>
+      <div class="label">FeX</div>
+      <h1 class="bebas">Steel, Scrap<br>&amp; Byproducts</h1>
+      <p>FeX is our metals division — sourcing, preparing, and brokering scrap steel, steel byproducts, and non-ferrous metals for steel mills and foundries across the U.S. and worldwide.</p>
     </div>
   </div>
+
+  <div class="div-head"><div class="label">What We Source</div><h2 class="bebas">Materials</h2></div>
   <div class="mat-full-list">
-    <div class="mfl-row"><img loading="lazy" class="mfl-img" src="/images/port-wide.jpg" alt="International gypsum port operations"><div class="mfl-txt"><div class="label">01 — Featured</div><div class="mfl-name">Gypsum</div><p class="mfl-desc">Gypsum is the core of FeX Group's business — more than 50% of total revenue. We source both natural rock gypsum and FGD gypsum domestically and internationally, with ocean vessel logistics that reach suppliers and customers worldwide.</p><ul class="mfl-bullets"><li>Natural rock gypsum — domestic and international sourcing</li><li>FGD gypsum recovered from coal-fired power plants</li><li>Ability to wash off-spec gypsum for premium quality</li><li>Ocean vessel, barge, rail, and truck logistics</li><li>Industries: cement, agriculture, wallboard manufacturing</li></ul></div></div>
-    <div class="mfl-row"><img loading="lazy" class="mfl-img" src="/images/structural-plate.jpg" alt="Scrap steel structural plate"><div class="mfl-txt"><div class="label">02</div><div class="mfl-name">Scrap Steel</div><p class="mfl-desc">We purchase and prepare scrap steel for reuse in the steelmaking process. Material sourced from industrial waste streams and demolition partnerships across the tri-state region.</p><ul class="mfl-bullets"><li>Industrial waste stream sourcing</li><li>Demolition company partnerships</li><li>100+ roll-off containers for containment</li><li>Ferrous: structural steel, automobiles, stainless</li><li>Public walk-in accepted — cash paid</li></ul></div></div>
-    <div class="mfl-row"><img loading="lazy" class="mfl-img" src="/images/raw-materials.jpg" alt="Steel byproducts raw materials"><div class="mfl-txt"><div class="label">03</div><div class="mfl-name">Steel Byproducts</div><p class="mfl-desc">A leading broker in steel byproducts for over 25 years. We purchase and prepare blast furnace iron, tundish, and pit scrap — processing to 3-foot sizes and below for remelting. Additionally, thousands of tons of mill scale has been brokered to the cement industry.</p></div></div>
-    <div class="mfl-row"><img loading="lazy" class="mfl-img" src="/images/autocast.jpg" alt="Coal and limestone sourcing"><div class="mfl-txt"><div class="label">04</div><div class="mfl-name">Coal &amp; Limestone</div><p class="mfl-desc">Sourcing coal for coal-fired power plants and limestone for industrial applications. Proven supplier relationships and logistics execution built over decades of operation in the Ohio Valley region.</p><ul class="mfl-bullets"><li>Coal for coal-fired power generation</li><li>Limestone for industrial and power plant use</li><li>Proven domestic supplier relationships</li><li>Delivery by truck, rail, and barge</li></ul></div></div>
-    <div class="mfl-row"><img loading="lazy" class="mfl-img" src="/images/port-quay.jpg" alt="Non-ferrous scrap metals industrial operations"><div class="mfl-txt"><div class="label">05</div><div class="mfl-name">Non-Ferrous Scrap</div><p class="mfl-desc">Aluminum, copper, brass, copper wire, and stainless steel purchased and prepared for remelting. Public walk-in customers welcome. Industrial accounts receive scheduled pickup service.</p><ul class="mfl-bullets"><li>Aluminum cans and structural aluminum</li><li>Copper and copper wire</li><li>Brass and bronze</li><li>Stainless steel — all grades</li><li>Pickup: Eastern OH, Western PA, Northern WV</li></ul></div></div>
+    <div class="mfl-row"><img loading="lazy" class="mfl-img" src="/images/structural-plate.jpg" alt="Scrap steel structural plate"><div class="mfl-txt"><div class="label">01</div><div class="mfl-name">Scrap Steel</div><p class="mfl-desc">We purchase and prepare scrap steel for reuse in the steelmaking process. Material sourced from industrial waste streams and demolition partnerships across the tri-state region.</p><ul class="mfl-bullets"><li>Industrial waste stream sourcing</li><li>Demolition company partnerships</li><li>100+ roll-off containers for containment</li><li>Ferrous: structural steel, automobiles, stainless</li><li>Public walk-in accepted — cash paid</li></ul></div></div>
+    <div class="mfl-row"><img loading="lazy" class="mfl-img" src="/images/raw-materials.jpg" alt="Steel byproducts raw materials"><div class="mfl-txt"><div class="label">02</div><div class="mfl-name">Steel Byproducts</div><p class="mfl-desc">A leading broker in steel byproducts for over 25 years. We purchase and prepare blast furnace iron, tundish, and pit scrap — processing to 3-foot sizes and below for remelting. Additionally, thousands of tons of mill scale has been brokered to the cement industry.</p></div></div>
+    <div class="mfl-row"><img loading="lazy" class="mfl-img" src="/images/port-quay.jpg" alt="Non-ferrous scrap metals industrial operations"><div class="mfl-txt"><div class="label">03</div><div class="mfl-name">Non-Ferrous</div><p class="mfl-desc">Aluminum, copper, brass, copper wire, and stainless steel purchased and prepared for remelting. Public walk-in customers welcome. Industrial accounts receive scheduled pickup service.</p><ul class="mfl-bullets"><li>Aluminum cans and structural aluminum</li><li>Copper and copper wire</li><li>Brass and bronze</li><li>Stainless steel — all grades</li><li>Pickup: Eastern OH, Western PA, Northern WV</li></ul></div></div>
   </div>
+
+  <div class="div-head"><div class="label">Who We Supply</div><h2 class="bebas">Industries</h2></div>
+  <div class="ind-full">
+    <div class="ifl-row"><div class="ifl-n">01</div><div class="ifl-name">Steel Mills</div><div class="ifl-desc">Our primary client sector. We supply scrap steel, steel byproducts, briquettes, and technical advisory to blast furnace and EAF/BOF operations. Former senior steel mill executives and metallurgical engineers on staff. Custom scrap blends to optimize output at the lowest cost per ton.</div></div>
+    <div class="ifl-row"><div class="ifl-n">02</div><div class="ifl-name">Foundries</div><div class="ifl-desc">Foundries require highly specialized scrap grades and byproduct materials. Our deep expertise in steel byproducts — blast furnace iron, tundish, pit scrap — and on-staff metallurgical engineers ensure material meets your exact furnace specifications.</div></div>
+  </div>
+
   <div class="page-cta-band">
     <div><div class="label">Have a specific material need?</div><h2 class="bebas" style="font-size:var(--f-3xl);color:var(--white);margin-top:12px">We source to your<br>specifications.</h2></div>
     <a class="btn btn-solid" onclick="go('contact')">Discuss Your Needs <span class="arr"></span></a>
@@ -957,24 +973,32 @@ Certifications: ReMA (Recycled Materials Association), AIST (Association for Iro
   </div>
 </div>
 
-<!-- ══ INDUSTRIES ══ -->
-<div id="pg-industries" class="pg">
+<!-- ══ FeX MINERALS ══ -->
+<div id="pg-minerals" class="pg">
   <div class="inner-hero">
-    <div class="inner-hero-bg" style="background-image:url('/images/autocast.jpg')"></div>
+    <div class="inner-hero-bg" style="background-image:url('/images/rock-gypsum.jpg')"></div>
     <div class="inner-hero-cnt">
-      <div class="label">Who We Serve</div>
-      <h1 class="bebas">Industries<br>We Supply</h1>
-      <p>Our materials, services, and logistics expertise are purpose-built for the industries that form the backbone of American manufacturing and energy production.</p>
+      <div class="label">FeX Minerals</div>
+      <h1 class="bebas">Gypsum, Coal<br>&amp; Limestone</h1>
+      <p>FeX Minerals is our industrial minerals division — sourcing gypsum, coal, and limestone for wallboard manufacturers, cement producers, agriculture, and power generation, with logistics by truck, rail, barge, and ocean vessel.</p>
     </div>
   </div>
-  <div class="ind-full">
-    <div class="ifl-row"><div class="ifl-n">01</div><div class="ifl-name">Iron &amp; Steel Mills</div><div class="ifl-desc">Our primary client sector. We supply scrap steel, steel byproducts, briquettes, and technical advisory to blast furnace and EAF/BOF operations. Former senior steel mill executives and metallurgical engineers on staff. Custom scrap blends to optimize output at the lowest cost per ton.</div></div>
-    <div class="ifl-row"><div class="ifl-n">02</div><div class="ifl-name">Wallboard Manufacturing</div><div class="ifl-desc">Drywall producers require consistent, reliable gypsum supply at specific quality grades. FeX sources domestically and internationally to ensure continuity. Off-spec washing capability provides a quality backstop when market supply tightens.</div></div>
-    <div class="ifl-row"><div class="ifl-n">03</div><div class="ifl-name">Cement Production</div><div class="ifl-desc">Cement plants require gypsum as a setting retarder, limestone as a primary feedstock, and mill scale as corrective material. FeX Group supplies all three, with delivery by truck, rail, or barge directly to your facility.</div></div>
-    <div class="ifl-row"><div class="ifl-n">04</div><div class="ifl-name">Agriculture</div><div class="ifl-desc">FGD gypsum is an increasingly important soil amendment for large-scale agriculture, improving soil structure and providing calcium and sulfur without significantly affecting pH. Both FGD and natural rock gypsum available in bulk.</div></div>
-    <div class="ifl-row"><div class="ifl-n">05</div><div class="ifl-name">Power Generation</div><div class="ifl-desc">Coal-fired power plants are both customers and supply partners. We source coal for plant operations and recover FGD gypsum — a high-value byproduct of the scrubbing process — from plant waste streams for distribution to other industries.</div></div>
-    <div class="ifl-row"><div class="ifl-n">06</div><div class="ifl-name">Foundry</div><div class="ifl-desc">Foundries require highly specialized scrap grades and byproduct materials. Our deep expertise in steel byproducts — blast furnace iron, tundish, pit scrap — and on-staff metallurgical engineers ensure material meets your exact furnace specifications.</div></div>
+
+  <div class="div-head"><div class="label">What We Source</div><h2 class="bebas">Materials</h2></div>
+  <div class="mat-full-list">
+    <div class="mfl-row"><img loading="lazy" class="mfl-img" src="/images/port-wide.jpg" alt="International gypsum port operations"><div class="mfl-txt"><div class="label">01 — Featured</div><div class="mfl-name">Gypsum</div><p class="mfl-desc">Gypsum is the core of FeX Group's business — more than 50% of total revenue. We source both natural rock gypsum and FGD gypsum domestically and internationally, with ocean vessel logistics that reach suppliers and customers worldwide.</p><ul class="mfl-bullets"><li>Natural rock gypsum — domestic and international sourcing</li><li>FGD gypsum recovered from coal-fired power plants</li><li>Ability to wash off-spec gypsum for premium quality</li><li>Ocean vessel, barge, rail, and truck logistics</li><li>Industries: cement, agriculture, wallboard manufacturing</li></ul></div></div>
+    <div class="mfl-row"><img loading="lazy" class="mfl-img" src="/images/autocast.jpg" alt="Coal sourcing for power generation"><div class="mfl-txt"><div class="label">02</div><div class="mfl-name">Coal</div><p class="mfl-desc">Sourcing coal for coal-fired power generation. Proven domestic supplier relationships and logistics execution built over decades of operation in the Ohio Valley region.</p><ul class="mfl-bullets"><li>Steam and industrial coal grades</li><li>Sourced for coal-fired power plants</li><li>Proven domestic supplier relationships</li><li>Delivery by truck, rail, and barge</li></ul></div></div>
+    <div class="mfl-row"><img loading="lazy" class="mfl-img" src="/images/port-crane.jpg" alt="Limestone bulk material handling"><div class="mfl-txt"><div class="label">03</div><div class="mfl-name">Limestone</div><p class="mfl-desc">Limestone for cement production, steelmaking flux, and industrial applications. Reliable sourcing and delivery across the Ohio Valley and beyond.</p><ul class="mfl-bullets"><li>Cement and construction-grade limestone</li><li>Flux stone for steelmaking</li><li>Industrial and power plant applications</li><li>Delivery by truck, rail, and barge</li></ul></div></div>
   </div>
+
+  <div class="div-head"><div class="label">Who We Supply</div><h2 class="bebas">Industries</h2></div>
+  <div class="ind-full">
+    <div class="ifl-row"><div class="ifl-n">01</div><div class="ifl-name">Wallboard Manufacturing</div><div class="ifl-desc">Drywall producers require consistent, reliable gypsum supply at specific quality grades. FeX sources domestically and internationally to ensure continuity. Off-spec washing capability provides a quality backstop when market supply tightens.</div></div>
+    <div class="ifl-row"><div class="ifl-n">02</div><div class="ifl-name">Cement Production</div><div class="ifl-desc">Cement plants require gypsum as a setting retarder, limestone as a primary feedstock, and mill scale as corrective material. FeX Group supplies all three, with delivery by truck, rail, or barge directly to your facility.</div></div>
+    <div class="ifl-row"><div class="ifl-n">03</div><div class="ifl-name">Agriculture</div><div class="ifl-desc">FGD gypsum is an increasingly important soil amendment for large-scale agriculture, improving soil structure and providing calcium and sulfur without significantly affecting pH. Both FGD and natural rock gypsum available in bulk.</div></div>
+    <div class="ifl-row"><div class="ifl-n">04</div><div class="ifl-name">Power Generation</div><div class="ifl-desc">Coal-fired power plants are both customers and supply partners. We source coal for plant operations and recover FGD gypsum — a high-value byproduct of the scrubbing process — from plant waste streams for distribution to other industries.</div></div>
+  </div>
+
   <div class="page-cta-band">
     <div><div class="label">Work With Us</div><h2 class="bebas" style="font-size:var(--f-3xl);color:var(--white);margin-top:12px">Ready to discuss<br>your material needs?</h2></div>
     <a class="btn btn-solid" onclick="go('contact')">Get a Quote <span class="arr"></span></a>
@@ -1129,11 +1153,12 @@ Certifications: ReMA (Recycled Materials Association), AIST (Association for Iro
     <div>
       <div class="ft-col-h">Materials</div>
       <ul class="ft-links">
-        <li><a onclick="go('materials')">Gypsum</a></li>
-        <li><a onclick="go('materials')">Scrap Steel</a></li>
-        <li><a onclick="go('materials')">Steel Byproducts</a></li>
-        <li><a onclick="go('materials')">Coal &amp; Limestone</a></li>
-        <li><a onclick="go('materials')">Non-Ferrous Scrap</a></li>
+        <li><a onclick="go('minerals')">Gypsum</a></li>
+        <li><a onclick="go('minerals')">Coal</a></li>
+        <li><a onclick="go('minerals')">Limestone</a></li>
+        <li><a onclick="go('fex')">Scrap Steel</a></li>
+        <li><a onclick="go('fex')">Steel Byproducts</a></li>
+        <li><a onclick="go('fex')">Non-Ferrous</a></li>
       </ul>
     </div>
     <div>
@@ -1151,7 +1176,8 @@ Certifications: ReMA (Recycled Materials Association), AIST (Association for Iro
       <div class="ft-col-h">Company</div>
       <ul class="ft-links">
         <li><a onclick="go('about')">About FeX Group</a></li>
-        <li><a onclick="go('industries')">Industries</a></li>
+        <li><a onclick="go('fex')">FeX</a></li>
+        <li><a onclick="go('minerals')">FeX Minerals</a></li>
         <li><a onclick="go('recycling')">Recycling</a></li>
         <li><a onclick="go('contact')">Contact Us</a></li>
       </ul>
@@ -1172,9 +1198,9 @@ Certifications: ReMA (Recycled Materials Association), AIST (Association for Iro
 // ── PAGE TITLES per section (fixes browser tab / analytics) ──
 var PAGE_TITLES = {
   home:       'FeX Group | Gypsum & Raw Materials Brokerage — Mingo Junction, Ohio',
-  materials:  'Materials | Gypsum, Scrap Steel & More — FeX Group',
+  fex:        'FeX | Scrap Steel, Steel Byproducts & Non-Ferrous — FeX Group',
   services:   'Services | Full-Service Material Solutions — FeX Group',
-  industries: 'Industries We Serve | Steel, Cement, Wallboard — FeX Group',
+  minerals:   'FeX Minerals | Gypsum, Coal & Limestone — FeX Group',
   recycling:  'Tri-State Recycling | Cash for Scrap — Mingo Junction OH',
   about:      'About FeX Group | 25 Years of Raw Materials Expertise',
   contact:    'Contact FeX Group | Get a Quote'
