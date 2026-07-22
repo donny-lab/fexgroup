@@ -1213,7 +1213,7 @@ Certifications: ReMA (Recycled Materials Association), AIST (Association for Iro
       <div>
         <div class="form-head">Send a Message</div>
         <form id="cf" onsubmit="handleForm(event)" novalidate aria-label="Contact form">
-          <input type="text" name="website" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <input type="text" name="_gotcha" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
           <input type="hidden" id="ft" value="">
           <div class="f2">
             <div class="fg"><label for="f-fn">First Name *</label><input id="f-fn" type="text" name="fn" required placeholder="Jane"></div>
@@ -1750,7 +1750,7 @@ var FORMSPREE_ID = 'xgoglaaq';
 async function handleForm(e) {
   e.preventDefault();
   var form=e.target, resp=document.getElementById('fr');
-  if (form.website.value!=='') return;
+  if (form._gotcha.value!=='') return;
   if ((Date.now()-parseInt(document.getElementById('ft').value))/1000<3) return;
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.em.value)) {
     resp.style.display='block';resp.className='form-resp err';resp.textContent='Please enter a valid email address.';return;
@@ -1760,7 +1760,7 @@ async function handleForm(e) {
   btn.textContent='Sending\u2026';btn.disabled=true;resp.style.display='none';
   if (FORMSPREE_ID!=='YOUR_FORMSPREE_ID') {
     try {
-      var res=await fetch('https://formspree.io/f/'+FORMSPREE_ID,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({_subject:'New website inquiry — '+form.inq.value+' ('+form.fn.value+' '+form.ln.value+')',firstName:form.fn.value,lastName:form.ln.value,email:form.em.value,phone:form.ph.value,company:form.co.value,interest:form.inq.value,message:form.msg.value})});
+      var res=await fetch('https://formspree.io/f/'+FORMSPREE_ID,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({_subject:'New website inquiry — '+form.inq.value+' ('+form.fn.value+' '+form.ln.value+')',_gotcha:form._gotcha.value,firstName:form.fn.value,lastName:form.ln.value,email:form.em.value,phone:form.ph.value,company:form.co.value,interest:form.inq.value,message:form.msg.value})});
       if (res.ok) {
         resp.style.display='block';resp.className='form-resp ok';
         resp.textContent='Thank you \u2014 we\'ll respond within one business day.';
