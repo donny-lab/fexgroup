@@ -137,6 +137,19 @@
 }
 </script>
 
+<!-- Google Analytics (GA4).
+     NOTE: G-2CHDQ6DHB8 is the property already running on the current fexgroup.com site.
+     Confirm with FeX whether to keep this property or create a new one for the rebuild.
+     send_page_view is off because this is a single-page app — page_view is fired
+     manually per route in trackPageView(). -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2CHDQ6DHB8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2CHDQ6DHB8', { send_page_view: false });
+</script>
+
 <link rel="icon" type="image/png" href="/images/logo-hq.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
@@ -495,6 +508,18 @@ img{display:block;max-width:100%;height:auto}
 .form-resp.ok{background:rgba(42,128,204,.08);border:1px solid rgba(42,128,204,.28);color:var(--blue2)}
 .form-resp.err{background:rgba(212,134,58,.08);border:1px solid rgba(212,134,58,.28);color:var(--amber)}
 
+/* LEGAL / PRIVACY */
+.legal-wrap{background:var(--ink2);padding:80px var(--padx)}
+.legal-wrap>*{max-width:820px}
+.legal-wrap h3{font-family:'Bebas Neue',sans-serif;font-size:30px;color:var(--white);letter-spacing:.02em;margin:38px 0 12px}
+.legal-wrap h3:first-of-type{margin-top:0}
+.legal-wrap p{font-size:var(--f-body);font-weight:400;color:var(--steel2);line-height:1.85;margin-bottom:14px}
+.legal-wrap ul{list-style:none;margin:0 0 14px;display:flex;flex-direction:column;gap:8px}
+.legal-wrap li{font-size:var(--f-body);font-weight:400;color:var(--steel2);line-height:1.7;padding-left:22px;position:relative}
+.legal-wrap li::before{content:'—';position:absolute;left:0;color:var(--blue2)}
+.legal-wrap a{color:var(--blue2)}
+.legal-updated{font-size:var(--f-label)!important;color:var(--steel)!important;letter-spacing:.14em;text-transform:uppercase;margin-bottom:34px!important}
+
 /* FOOTER */
 footer{background:var(--ink);padding:80px var(--padx) 40px;border-top:1px solid rgba(255,255,255,.04)}
 .ft-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
@@ -628,6 +653,7 @@ footer{background:var(--ink);padding:80px var(--padx) 40px;border-top:1px solid 
   .ft-bottom{flex-direction:column;gap:16px;text-align:center}
   .ft-assoc{justify-content:center}
   #float-cta{display:block}
+  .legal-wrap{padding:56px 20px}
   .page-cta-band{flex-direction:column;align-items:flex-start;padding:48px 20px;gap:24px}
   .page-cta-band .btn{width:100%}
   .div-head{padding:48px 20px 0}
@@ -1208,6 +1234,70 @@ Certifications: ReMA (Recycled Materials Association), AIST (Association for Iro
   </div>
 </div>
 
+<!-- ══ PRIVACY POLICY ══ -->
+<div id="pg-privacy" class="pg">
+  <div class="inner-hero">
+    <div class="inner-hero-cnt">
+      <div class="label">Legal</div>
+      <h1 class="bebas">Privacy Policy</h1>
+      <p>How FeX Group collects, uses, and protects information submitted through this website.</p>
+    </div>
+  </div>
+  <div class="legal-wrap">
+    <p class="legal-updated">Last updated: July 2026</p>
+
+    <h3>Who We Are</h3>
+    <p>This website is operated by FeX Group, LLC, 1058 Commercial Avenue, Mingo Junction, Ohio 43938. If you have any question about this policy or about information you have given us, contact us at <a href="mailto:info@fexgroup.com">info@fexgroup.com</a> or <a href="tel:4126040400">412.604.0400</a>.</p>
+
+    <h3>Information You Give Us</h3>
+    <p>The only place this site asks for personal information is our contact form. When you submit it, we receive:</p>
+    <ul>
+      <li>Your first and last name</li>
+      <li>Your email address</li>
+      <li>Your phone number and company name, if you choose to provide them</li>
+      <li>The area of interest you select and the message you write</li>
+    </ul>
+    <p>We ask for this only so a member of our team can respond to your inquiry. We do not require you to create an account, and this site does not process payments.</p>
+
+    <h3>Information Collected Automatically</h3>
+    <p>Like most websites, we use analytics to understand how visitors find and use the site. This is collected through Google Analytics, which sets cookies and records information such as the pages you view, approximate geographic region, referring website, and general device and browser type. This information is used in aggregate. We do not use it to identify you personally.</p>
+    <p>Most browsers let you block or delete cookies through their settings. You can also opt out of Google Analytics across all websites using the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google Analytics opt-out browser add-on</a>.</p>
+
+    <h3>How We Use Your Information</h3>
+    <ul>
+      <li>To respond to your inquiry and provide quotes, pricing, or technical information</li>
+      <li>To follow up about a material, service, or shipment you asked about</li>
+      <li>To maintain normal business records of our correspondence</li>
+      <li>To operate, secure, and improve this website</li>
+    </ul>
+
+    <h3>How We Share Information</h3>
+    <p><strong>We do not sell your personal information, and we do not rent or trade it.</strong> We share it only with service providers who help us run this site and our business — specifically our website hosting provider, the service that delivers our contact form submissions to us, and our analytics provider. These providers may only use the information to perform services for us.</p>
+    <p>We may also disclose information where required by law, or to protect the rights, safety, or property of FeX Group, our customers, or others.</p>
+
+    <h3>How Long We Keep It</h3>
+    <p>We keep contact form inquiries for as long as needed to respond and to maintain reasonable business records, after which they are deleted. Analytics data is retained according to our analytics provider's standard retention settings.</p>
+
+    <h3>Your Choices</h3>
+    <p>You may ask us to provide a copy of the personal information we hold about you, correct it, or delete it. Email <a href="mailto:info@fexgroup.com">info@fexgroup.com</a> and we will respond within a reasonable period. If you have asked to receive follow-up from us and no longer wish to, just tell us and we will stop.</p>
+
+    <h3>Security</h3>
+    <p>This site is served over an encrypted HTTPS connection, and we take reasonable measures to protect information submitted to us. No method of transmission or storage over the internet is completely secure, so we cannot guarantee absolute security. Please do not send sensitive information such as financial account numbers through the contact form.</p>
+
+    <h3>Children's Privacy</h3>
+    <p>This site is intended for business use and is not directed to children under 13. We do not knowingly collect personal information from children.</p>
+
+    <h3>Links to Other Sites</h3>
+    <p>This site may link to third-party websites, including video content hosted by YouTube. We are not responsible for the privacy practices of sites we do not operate, and we encourage you to read their policies.</p>
+
+    <h3>Changes to This Policy</h3>
+    <p>We may update this policy from time to time. When we do, we will revise the "Last updated" date at the top of this page.</p>
+
+    <h3>Contact Us</h3>
+    <p>FeX Group, LLC<br>1058 Commercial Avenue, Mingo Junction, OH 43938<br><a href="tel:4126040400">412.604.0400</a> · <a href="mailto:info@fexgroup.com">info@fexgroup.com</a></p>
+  </div>
+</div>
+
 </div><!-- /page -->
 
 <footer role="contentinfo">
@@ -1251,6 +1341,7 @@ Certifications: ReMA (Recycled Materials Association), AIST (Association for Iro
         <li><a onclick="go('minerals')">FeX Minerals</a></li>
         <li><a onclick="go('recycling')">Recycling</a></li>
         <li><a onclick="go('contact')">Contact Us</a></li>
+        <li><a onclick="go('privacy')">Privacy Policy</a></li>
       </ul>
     </div>
   </div>
@@ -1266,7 +1357,9 @@ Certifications: ReMA (Recycled Materials Association), AIST (Association for Iro
 </footer>
 
 <script>
-// ── PAGE TITLES per section (fixes browser tab / analytics) ──
+var SITE_ORIGIN = 'https://www.fexgroup.com';
+
+// ── PAGE TITLES per section (browser tab / search results) ──
 var PAGE_TITLES = {
   home:       'FeX Group | Gypsum & Raw Materials Brokerage — Mingo Junction, Ohio',
   fex:        'FeX Metals | Scrap Steel, Steel Byproducts & Non-Ferrous — FeX Group',
@@ -1274,14 +1367,65 @@ var PAGE_TITLES = {
   minerals:   'FeX Minerals | Gypsum, Coal & Limestone — FeX Group',
   recycling:  'Tri-State Recycling | Cash for Scrap — Mingo Junction OH',
   about:      'About FeX Group | 25 Years of Raw Materials Expertise',
-  contact:    'Contact FeX Group | Get a Quote'
+  contact:    'Contact FeX Group | Get a Quote',
+  privacy:    'Privacy Policy | FeX Group'
 };
+
+// ── PER-PAGE META DESCRIPTIONS (each URL is indexed separately) ──
+var PAGE_DESC = {
+  home:       'FeX Group is a raw materials broker and logistics provider in Mingo Junction, Ohio. Gypsum, scrap steel, steel byproducts, coal, and limestone for steel mills, cement kilns, wallboard manufacturers, and power plants. 25+ years of expertise.',
+  fex:        'FeX Metals brokers scrap steel, steel byproducts, and non-ferrous metals for steel mills and foundries. Blast furnace iron, tundish, pit scrap, mill scale, aluminum, copper, brass, and stainless.',
+  services:   'Raw materials brokerage, logistics management, steel mill advisory, customized briquettes, metallic waste recycling, on-site remediation, and material handling from FeX Group.',
+  minerals:   'FeX Minerals sources gypsum, coal, and limestone for wallboard manufacturers, cement producers, agriculture, and power generation — with truck, rail, barge, and ocean vessel logistics.',
+  recycling:  'Tri-State Recycling in Mingo Junction, Ohio pays cash for scrap metals, aluminum cans, and wood pallets. Open to the public Monday to Friday, 7 AM to 3 PM. See what we accept.',
+  about:      'Founded in 1998, FeX Group combines over 100 years of iron and steel industry experience across metals, minerals, recycling, and logistics — operating nationally and internationally.',
+  contact:    'Contact FeX Group for gypsum supply, scrap steel brokerage, logistics management, or technical advisory. Three Mingo Junction, Ohio locations. We respond within one business day.',
+  privacy:    'How FeX Group collects, uses, and protects information submitted through fexgroup.com.'
+};
+
+// ── REAL URLS: each section gets its own indexable path ──
+var PAGE_PATHS = {
+  home: '/', fex: '/fex-metals', minerals: '/fex-minerals', services: '/services',
+  recycling: '/recycling', about: '/about', contact: '/contact', privacy: '/privacy'
+};
+var PATH_PAGES = {};
+for (var _p in PAGE_PATHS) { PATH_PAGES[PAGE_PATHS[_p]] = _p; }
 
 var currentPage = 'home';
 var statsAnimated = false;
 
+// Keep title, description, canonical and og: tags in sync with the active route
+function setMeta(pg, path) {
+  var title = PAGE_TITLES[pg] || PAGE_TITLES.home;
+  var desc  = PAGE_DESC[pg] || PAGE_DESC.home;
+  var url   = SITE_ORIGIN + path;
+  document.title = title;
+  var set = function(sel, attr, val) {
+    var el = document.querySelector(sel); if (el) el.setAttribute(attr, val);
+  };
+  set('meta[name="description"]', 'content', desc);
+  set('meta[property="og:title"]', 'content', title);
+  set('meta[property="og:description"]', 'content', desc);
+  set('meta[property="og:url"]', 'content', url);
+  set('meta[name="twitter:title"]', 'content', title);
+  set('meta[name="twitter:description"]', 'content', desc);
+  set('link[rel="canonical"]', 'href', url);
+}
+
+// GA4 page_view for client-side route changes (send_page_view is disabled in the tag)
+function trackPageView(path) {
+  if (typeof gtag === 'function') {
+    gtag('event', 'page_view', {
+      page_title: document.title,
+      page_path: path,
+      page_location: SITE_ORIGIN + path
+    });
+  }
+}
+
 // ── ROUTING ──
-function go(pg) {
+function go(pg, push) {
+  if (push === undefined) push = true;
   var mnav = document.getElementById('mnav');
   if (mnav) { mnav.classList.remove('open'); document.body.style.overflow = ''; }
 
@@ -1293,8 +1437,14 @@ function go(pg) {
     target.classList.add('active');
     window.scrollTo(0, 0);
     currentPage = pg;
-    // Update browser tab title
-    document.title = PAGE_TITLES[pg] || PAGE_TITLES.home;
+
+    var path = PAGE_PATHS[pg] || '/';
+    if (push && window.history && history.pushState && location.pathname !== path) {
+      history.pushState({ page: pg }, '', path);
+    }
+    setMeta(pg, path);
+    trackPageView(path);
+
     setTimeout(revealAll, 80);
     // Re-animate stats when returning to home
     if (pg === 'home' && statsAnimated) { runCounters(); }
@@ -1313,6 +1463,25 @@ function go(pg) {
     navLinks[j].classList.toggle('active', id === 'nl-' + pg);
   }
 }
+
+// Resolve the URL the visitor actually landed on (deep links, refreshes, shared links)
+function initRoute() {
+  var path = location.pathname;
+  if (path.length > 1) { path = path.replace(/\/+$/, ''); }
+  if (!path) { path = '/'; }
+  var pg = PATH_PAGES[path];
+  if (!pg) { pg = 'home'; path = '/'; }
+  if (window.history && history.replaceState) {
+    history.replaceState({ page: pg }, '', path);
+  }
+  go(pg, false);
+}
+
+// Browser back/forward
+window.addEventListener('popstate', function (e) {
+  var pg = (e.state && e.state.page) || PATH_PAGES[location.pathname] || 'home';
+  go(pg, false);
+});
 
 function openMobile() {
   document.getElementById('mnav').classList.add('open');
@@ -1540,9 +1709,10 @@ async function handleForm(e) {
       resp.textContent='Something went wrong. Please call 740.535.8148.';
     }
   } else {
-    resp.style.display='block';resp.className='form-resp ok';
-    resp.textContent='Thank you \u2014 we\'ll respond within one business day.';
-    form.reset();document.getElementById('ft').value=Date.now();
+    // No endpoint configured yet. NEVER claim success here \u2014 a false confirmation
+    // silently discards the lead. Fail loudly and give the visitor a real way through.
+    resp.style.display='block';resp.className='form-resp err';
+    resp.textContent='Online submission isn\'t available right now. Please call 740.535.8148 or email info@fexgroup.com and we\'ll respond right away.';
   }
   btn.textContent=origText;btn.disabled=false;
   resp.scrollIntoView({behavior:'smooth',block:'nearest'});
@@ -1560,13 +1730,14 @@ document.addEventListener('DOMContentLoaded', function() {
     if (fc) fc.classList.toggle('visible',window.scrollY>400);
   });
 
+  // Activate the page matching the URL the visitor landed on.
+  // This also starts/stops the gypsum wheel, so don't set that timer separately.
+  initRoute();
+
   revealAll();
 
-  // Stat counters — first run
-  setTimeout(function() { runCounters(); }, 400);
-
-  // Wheel auto-advance
-  wheelTimer = setInterval(wheelNext, 4000);
+  // Stat counters — first run (only meaningful on home)
+  setTimeout(function() { if (currentPage === 'home') { runCounters(); } }, 400);
 
   // Logistics canvas
   setTimeout(initLogCanvas, 500);

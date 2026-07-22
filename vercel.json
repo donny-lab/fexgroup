@@ -1,1 +1,12 @@
-{"rewrites":[{"source":"/((?!images/).*)", "destination":"/index.html"}]}
+{
+  "redirects": [
+    { "source": "/logistics-management", "destination": "/services", "permanent": true },
+    { "source": "/contact-us", "destination": "/contact", "permanent": true },
+    { "source": "/tri-state-recycling", "destination": "/recycling", "permanent": true },
+    { "source": "/products", "destination": "/", "permanent": true },
+    { "source": "/industries", "destination": "/", "permanent": true }
+  ],
+  "rewrites": [
+    { "source": "/((?!images/).*)", "destination": "/index.html" }
+  ]
+}
