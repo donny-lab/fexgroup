@@ -393,6 +393,9 @@ img{display:block;max-width:100%;height:auto}
 .mfl-bullets{list-style:none;display:flex;flex-direction:column;gap:8px}
 .mfl-bullets li{font-size:var(--f-label);font-weight:400;color:var(--steel2);padding-left:22px;position:relative;line-height:1.5}
 .mfl-bullets li::before{content:'—';position:absolute;left:0;color:var(--blue2)}
+/* ADDITIONAL MINERALS — sourced-on-request note, deliberately subordinate to the headline materials */
+.addl-minerals{background:var(--ink);padding:44px 52px;border-left:3px solid rgba(82,168,245,.35);display:flex;flex-direction:column;align-items:flex-start;gap:16px}
+.addl-minerals p{font-size:var(--f-body);font-weight:400;color:var(--steel2);line-height:1.75;max-width:780px}
 
 /* SERVICES */
 .svc-full{background:var(--ink2);padding:80px var(--padx);display:grid;grid-template-columns:1fr 1fr;gap:var(--gap)}
@@ -629,6 +632,7 @@ footer{background:var(--ink);padding:80px var(--padx) 40px;border-top:1px solid 
   .page-cta-band .btn{width:100%}
   .div-head{padding:48px 20px 0}
   .div-head + .mat-full-list,.div-head + .ind-full{padding-top:28px}
+  .addl-minerals{padding:32px 20px}
   .materials-accept{grid-template-columns:1fr}
   .ma-panel{padding:40px 24px}
   .ma-list{columns:1}
@@ -1005,6 +1009,11 @@ Certifications: ReMA (Recycled Materials Association), AIST (Association for Iro
     <div class="mfl-row"><img loading="lazy" class="mfl-img" src="/images/port-wide.jpg" alt="International gypsum port operations"><div class="mfl-txt"><div class="label">01 — Featured</div><div class="mfl-name">Gypsum</div><p class="mfl-desc">Gypsum is the core of FeX Group's business. We source both natural rock gypsum and FGD gypsum domestically and internationally, with ocean vessel logistics that reach suppliers and customers worldwide.</p><ul class="mfl-bullets"><li>Natural rock gypsum — domestic and international sourcing</li><li>FGD gypsum — power plant recovery and landfill reclamation</li><li>Proven ability to process off-spec gypsum to obtain premium qualities</li><li>Ocean vessel, barge, rail, and truck logistics</li><li>Industries: cement, agriculture, wallboard, dental, food</li></ul></div></div>
     <div class="mfl-row"><img loading="lazy" class="mfl-img" src="/images/coal.jpg" alt="Coal sourcing for power generation"><div class="mfl-txt"><div class="label">02</div><div class="mfl-name">Coal</div><p class="mfl-desc">Sourcing coal for coal-fired power generation. Proven domestic supplier relationships and logistics execution built over decades of operation in the Ohio Valley region.</p><ul class="mfl-bullets"><li>Steam and industrial coal grades</li><li>Sourced for coal-fired power plants</li><li>Proven domestic supplier relationships</li><li>Delivery by truck, rail, and barge</li></ul></div></div>
     <div class="mfl-row"><img loading="lazy" class="mfl-img" src="/images/limestone.jpg" alt="Limestone bulk material handling"><div class="mfl-txt"><div class="label">03</div><div class="mfl-name">Limestone</div><p class="mfl-desc">Limestone for cement production, coal-fired power plants, steelmaking flux, and industrial applications. Reliable sourcing and delivery internationally.</p><ul class="mfl-bullets"><li>Cement and construction-grade limestone</li><li>Coal-fired power plant applications</li><li>Flux stone for steelmaking</li><li>Delivery by truck, rail, barge, and ocean vessel</li></ul></div></div>
+    <div class="addl-minerals">
+      <div class="label">Additional Minerals</div>
+      <p>Barite and other industrial minerals sourced on request through our global supplier network. Talk to our team about your specification.</p>
+      <a class="btn btn-outline" onclick="go('contact')">Discuss a Specification <span class="arr"></span></a>
+    </div>
   </div>
 
   <div class="div-head"><div class="label">Who We Supply</div><h2 class="bebas">Industries</h2></div>
