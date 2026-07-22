@@ -216,7 +216,9 @@ img{display:block;max-width:100%;height:auto}
 .nav-cta{background:var(--blue)!important;color:var(--white)!important;padding:11px 20px!important;font-size:var(--f-label)!important;font-weight:600!important;letter-spacing:.1em!important;text-transform:uppercase!important;transition:background .2s!important;white-space:nowrap!important}
 .nav-cta::after{display:none!important}
 .nav-cta:hover{background:var(--blue2)!important}
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none}
+/* Visible keyboard focus — nav and clickable rows are now reachable by tab */
+a:focus-visible,button:focus-visible,[role="link"]:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--blue2);outline-offset:3px}
 .hamburger span{display:block;width:24px;height:1.5px;background:var(--white);transition:all .3s}
 
 /* MOBILE NAV */
@@ -508,6 +510,13 @@ img{display:block;max-width:100%;height:auto}
 .form-resp.ok{background:rgba(42,128,204,.08);border:1px solid rgba(42,128,204,.28);color:var(--blue2)}
 .form-resp.err{background:rgba(212,134,58,.08);border:1px solid rgba(212,134,58,.28);color:var(--amber)}
 
+/* 404 */
+.nf-links{list-style:none;margin-top:26px;display:flex;flex-direction:column;gap:12px}
+.nf-links li{padding-left:22px;position:relative}
+.nf-links li::before{content:'—';position:absolute;left:0;color:var(--blue2)}
+.nf-links a{font-size:var(--f-body);color:var(--steel2);transition:color .2s}
+.nf-links a:hover{color:var(--white)}
+
 /* LEGAL / PRIVACY */
 .legal-wrap{background:var(--ink2);padding:80px var(--padx)}
 .legal-wrap>*{max-width:820px}
@@ -694,29 +703,29 @@ Certifications: ReMA (Recycled Materials Association), AIST (Association for Iro
 <!-- MOBILE NAV -->
 <div id="mnav">
   <button id="mnav-x" onclick="closeMobile()">✕</button>
-  <a onclick="go('home')">Home</a>
-  <a onclick="go('fex')">FeX Metals</a>
-  <a onclick="go('minerals')">FeX Minerals</a>
-  <a onclick="go('services')">Services</a>
-  <a onclick="go('recycling')">Recycling</a>
-  <a onclick="go('about')">About</a>
-  <a onclick="go('contact')">Contact</a>
+  <a href="/">Home</a>
+  <a href="/fex-metals">FeX Metals</a>
+  <a href="/fex-minerals">FeX Minerals</a>
+  <a href="/services">Services</a>
+  <a href="/recycling">Recycling</a>
+  <a href="/about">About</a>
+  <a href="/contact">Contact</a>
 </div>
 
 <!-- NAV -->
 <nav id="nav" role="navigation" aria-label="Main navigation">
-  <a onclick="go('home')" style="cursor:pointer" aria-label="FeX Group home">
+  <a href="/" aria-label="FeX Group home">
     <img class="nav-logo" src="/images/logo-hq.png" alt="FeX Group — Raw Materials Brokerage">
   </a>
   <ul class="nav-links">
-    <li><a onclick="go('fex')" id="nl-fex">FeX Metals</a></li>
-    <li><a onclick="go('minerals')" id="nl-minerals">FeX Minerals</a></li>
-    <li><a onclick="go('services')" id="nl-services">Services</a></li>
-    <li><a onclick="go('recycling')" id="nl-recycling">Recycling</a></li>
-    <li><a onclick="go('about')" id="nl-about">About</a></li>
-    <li><a onclick="go('contact')" class="nav-cta">Get a Quote</a></li>
+    <li><a href="/fex-metals" id="nl-fex">FeX Metals</a></li>
+    <li><a href="/fex-minerals" id="nl-minerals">FeX Minerals</a></li>
+    <li><a href="/services" id="nl-services">Services</a></li>
+    <li><a href="/recycling" id="nl-recycling">Recycling</a></li>
+    <li><a href="/about" id="nl-about">About</a></li>
+    <li><a href="/contact" class="nav-cta">Get a Quote</a></li>
   </ul>
-  <div class="hamburger" onclick="openMobile()" aria-label="Open menu"><span></span><span></span><span></span></div>
+  <button class="hamburger" onclick="openMobile()" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
 
 <div class="page">
@@ -733,7 +742,7 @@ Certifications: ReMA (Recycled Materials Association), AIST (Association for Iro
     <div class="hero-location">Mingo Junction, Ohio · Est. 1998</div>
     <p class="hero-sub">For over 25 years, FeX Group has connected steel mills, wallboard manufacturers, cement kilns, and coal-fired power plants with the gypsum, scrap steel, coal, and limestone they need — delivered worldwide.</p>
     <div class="hero-btns">
-      <a class="btn btn-solid" onclick="go('contact')">Get a Quote <span class="arr"></span></a>
+      <a class="btn btn-solid" href="/contact">Get a Quote <span class="arr"></span></a>
     </div>
   </div>
 </section>
@@ -810,15 +819,15 @@ Certifications: ReMA (Recycled Materials Association), AIST (Association for Iro
       <div class="label">What We Source</div>
       <h2 id="mat-title" class="bebas" style="font-size:var(--f-4xl);color:var(--white);margin-top:12px">Our Material Portfolio</h2>
     </div>
-    <a class="btn btn-outline" onclick="go('fex')">View All Materials <span class="arr"></span></a>
+    <a class="btn btn-outline" href="/fex-metals">View All Materials <span class="arr"></span></a>
   </div>
   <div class="mat-rows">
-    <div class="mat-row rv" onclick="go('minerals')" style="cursor:pointer"><div class="mat-row-bg" style="background-image:url('/images/port-wide.jpg')"></div><div class="mat-row-vg"></div><div class="mat-row-inner"><div class="mat-big-n">01</div><div class="mat-info"><div class="mat-featured-pill">● Primary Material</div><div class="mat-name">Gypsum</div><div class="mat-sub">Natural rock and FGD gypsum — domestic and international. Cement, agriculture, wallboard, dental, food.</div></div><div class="mat-tag">FeX Minerals →</div></div></div>
-    <div class="mat-row rv d1" onclick="go('minerals')" style="cursor:pointer"><div class="mat-row-bg" style="background-image:url('/images/coal.jpg')"></div><div class="mat-row-vg"></div><div class="mat-row-inner"><div class="mat-big-n">02</div><div class="mat-info"><div class="mat-name">Coal</div><div class="mat-sub">Sourcing coal for coal-fired power generation. Proven Ohio Valley supplier relationships and logistics.</div></div><div class="mat-tag">FeX Minerals →</div></div></div>
-    <div class="mat-row rv d2" onclick="go('minerals')" style="cursor:pointer"><div class="mat-row-bg" style="background-image:url('/images/limestone.jpg')"></div><div class="mat-row-vg"></div><div class="mat-row-inner"><div class="mat-big-n">03</div><div class="mat-info"><div class="mat-name">Limestone</div><div class="mat-sub">Limestone for cement production, coal-fired power plants, steelmaking flux, and industrial applications.</div></div><div class="mat-tag">FeX Minerals →</div></div></div>
-    <div class="mat-row rv d3" onclick="go('fex')" style="cursor:pointer"><div class="mat-row-bg" style="background-image:url('/images/structural-plate.jpg')"></div><div class="mat-row-vg"></div><div class="mat-row-inner"><div class="mat-big-n">04</div><div class="mat-info"><div class="mat-name">Scrap Steel</div><div class="mat-sub">Industrial waste streams, demolition partnerships, and 100+ roll-off containers across the tri-state region.</div></div><div class="mat-tag">FeX Metals →</div></div></div>
-    <div class="mat-row rv d4" onclick="go('fex')" style="cursor:pointer"><div class="mat-row-bg" style="background-image:url('/images/raw-materials.jpg')"></div><div class="mat-row-vg"></div><div class="mat-row-inner"><div class="mat-big-n">05</div><div class="mat-info"><div class="mat-name">Steel Byproducts</div><div class="mat-sub">Blast furnace iron, tundish, pit scrap, mill scale. 25+ years as a leading broker.</div></div><div class="mat-tag">FeX Metals →</div></div></div>
-    <div class="mat-row rv d5" onclick="go('fex')" style="cursor:pointer"><div class="mat-row-bg" style="background-image:url('/images/nonferrous.jpg')"></div><div class="mat-row-vg"></div><div class="mat-row-inner"><div class="mat-big-n">06</div><div class="mat-info"><div class="mat-name">Non-Ferrous</div><div class="mat-sub">Aluminum, copper, brass, and stainless steel. Industrial accounts and public walk-in accepted.</div></div><div class="mat-tag">FeX Metals →</div></div></div>
+    <div class="mat-row rv" onclick="go('minerals')" style="cursor:pointer" role="link" tabindex="0"><div class="mat-row-bg" style="background-image:url('/images/port-wide.jpg')"></div><div class="mat-row-vg"></div><div class="mat-row-inner"><div class="mat-big-n">01</div><div class="mat-info"><div class="mat-featured-pill">● Primary Material</div><div class="mat-name">Gypsum</div><div class="mat-sub">Natural rock and FGD gypsum — domestic and international. Cement, agriculture, wallboard, dental, food.</div></div><div class="mat-tag">FeX Minerals →</div></div></div>
+    <div class="mat-row rv d1" onclick="go('minerals')" style="cursor:pointer" role="link" tabindex="0"><div class="mat-row-bg" style="background-image:url('/images/coal.jpg')"></div><div class="mat-row-vg"></div><div class="mat-row-inner"><div class="mat-big-n">02</div><div class="mat-info"><div class="mat-name">Coal</div><div class="mat-sub">Sourcing coal for coal-fired power generation. Proven Ohio Valley supplier relationships and logistics.</div></div><div class="mat-tag">FeX Minerals →</div></div></div>
+    <div class="mat-row rv d2" onclick="go('minerals')" style="cursor:pointer" role="link" tabindex="0"><div class="mat-row-bg" style="background-image:url('/images/limestone.jpg')"></div><div class="mat-row-vg"></div><div class="mat-row-inner"><div class="mat-big-n">03</div><div class="mat-info"><div class="mat-name">Limestone</div><div class="mat-sub">Limestone for cement production, coal-fired power plants, steelmaking flux, and industrial applications.</div></div><div class="mat-tag">FeX Minerals →</div></div></div>
+    <div class="mat-row rv d3" onclick="go('fex')" style="cursor:pointer" role="link" tabindex="0"><div class="mat-row-bg" style="background-image:url('/images/structural-plate.jpg')"></div><div class="mat-row-vg"></div><div class="mat-row-inner"><div class="mat-big-n">04</div><div class="mat-info"><div class="mat-name">Scrap Steel</div><div class="mat-sub">Industrial waste streams, demolition partnerships, and 100+ roll-off containers across the tri-state region.</div></div><div class="mat-tag">FeX Metals →</div></div></div>
+    <div class="mat-row rv d4" onclick="go('fex')" style="cursor:pointer" role="link" tabindex="0"><div class="mat-row-bg" style="background-image:url('/images/raw-materials.jpg')"></div><div class="mat-row-vg"></div><div class="mat-row-inner"><div class="mat-big-n">05</div><div class="mat-info"><div class="mat-name">Steel Byproducts</div><div class="mat-sub">Blast furnace iron, tundish, pit scrap, mill scale. 25+ years as a leading broker.</div></div><div class="mat-tag">FeX Metals →</div></div></div>
+    <div class="mat-row rv d5" onclick="go('fex')" style="cursor:pointer" role="link" tabindex="0"><div class="mat-row-bg" style="background-image:url('/images/nonferrous.jpg')"></div><div class="mat-row-vg"></div><div class="mat-row-inner"><div class="mat-big-n">06</div><div class="mat-info"><div class="mat-name">Non-Ferrous</div><div class="mat-sub">Aluminum, copper, brass, and stainless steel. Industrial accounts and public walk-in accepted.</div></div><div class="mat-tag">FeX Metals →</div></div></div>
   </div>
 </section>
 
@@ -855,12 +864,12 @@ Certifications: ReMA (Recycled Materials Association), AIST (Association for Iro
     <p class="body-lg">Our materials and expertise span the industries that form the backbone of American manufacturing and energy production.</p>
   </div>
   <div class="ind-list">
-    <div class="ind-item rv" onclick="go('fex')" style="cursor:pointer"><div class="ind-num">01</div><div class="ind-name">Steel Mills</div><div class="ind-desc">Scrap steel, byproducts, briquettes, and technical advisory for blast furnace, EAF, and BOF operations. Former mill executives on staff.</div></div>
-    <div class="ind-item rv d1" onclick="go('fex')" style="cursor:pointer"><div class="ind-num">02</div><div class="ind-name">Foundries</div><div class="ind-desc">Specialized scrap grades and byproduct materials. Metallurgical engineers on staff process to your exact furnace specifications.</div></div>
-    <div class="ind-item rv d2" onclick="go('minerals')" style="cursor:pointer"><div class="ind-num">03</div><div class="ind-name">Wallboard Manufacturing</div><div class="ind-desc">Natural rock and FGD gypsum for drywall production at scale. Proven ability to process off-spec gypsum to obtain premium qualities.</div></div>
-    <div class="ind-item rv d3" onclick="go('minerals')" style="cursor:pointer"><div class="ind-num">04</div><div class="ind-name">Cement Production</div><div class="ind-desc">Gypsum as setting retarder, limestone as feedstock, mill scale as corrective material. All three sourced and delivered.</div></div>
-    <div class="ind-item rv d4" onclick="go('minerals')" style="cursor:pointer"><div class="ind-num">05</div><div class="ind-name">Agriculture</div><div class="ind-desc">FGD and natural gypsum as soil amendments for large-scale operations. Improves soil structure without affecting pH.</div></div>
-    <div class="ind-item rv d5" onclick="go('minerals')" style="cursor:pointer"><div class="ind-num">06</div><div class="ind-name">Power Generation</div><div class="ind-desc">Coal sourcing for plant operations and FGD gypsum recovery from waste streams. A circular model that benefits all parties.</div></div>
+    <div class="ind-item rv" onclick="go('fex')" style="cursor:pointer" role="link" tabindex="0"><div class="ind-num">01</div><div class="ind-name">Steel Mills</div><div class="ind-desc">Scrap steel, byproducts, briquettes, and technical advisory for blast furnace, EAF, and BOF operations. Former mill executives on staff.</div></div>
+    <div class="ind-item rv d1" onclick="go('fex')" style="cursor:pointer" role="link" tabindex="0"><div class="ind-num">02</div><div class="ind-name">Foundries</div><div class="ind-desc">Specialized scrap grades and byproduct materials. Metallurgical engineers on staff process to your exact furnace specifications.</div></div>
+    <div class="ind-item rv d2" onclick="go('minerals')" style="cursor:pointer" role="link" tabindex="0"><div class="ind-num">03</div><div class="ind-name">Wallboard Manufacturing</div><div class="ind-desc">Natural rock and FGD gypsum for drywall production at scale. Proven ability to process off-spec gypsum to obtain premium qualities.</div></div>
+    <div class="ind-item rv d3" onclick="go('minerals')" style="cursor:pointer" role="link" tabindex="0"><div class="ind-num">04</div><div class="ind-name">Cement Production</div><div class="ind-desc">Gypsum as setting retarder, limestone as feedstock, mill scale as corrective material. All three sourced and delivered.</div></div>
+    <div class="ind-item rv d4" onclick="go('minerals')" style="cursor:pointer" role="link" tabindex="0"><div class="ind-num">05</div><div class="ind-name">Agriculture</div><div class="ind-desc">FGD and natural gypsum as soil amendments for large-scale operations. Improves soil structure without affecting pH.</div></div>
+    <div class="ind-item rv d5" onclick="go('minerals')" style="cursor:pointer" role="link" tabindex="0"><div class="ind-num">06</div><div class="ind-name">Power Generation</div><div class="ind-desc">Coal sourcing for plant operations and FGD gypsum recovery from waste streams. A circular model that benefits all parties.</div></div>
   </div>
 </section>
 
@@ -901,7 +910,7 @@ Certifications: ReMA (Recycled Materials Association), AIST (Association for Iro
       <div class="rec-stat"><div class="rec-stat-n">40+</div><div class="rec-stat-l">Years Ohio Valley</div></div>
       <div class="rec-stat"><div class="rec-stat-n">3</div><div class="rec-stat-l">State service area</div></div>
     </div>
-    <a class="btn btn-solid" onclick="go('recycling')">Tri-State Recycling <span class="arr"></span></a>
+    <a class="btn btn-solid" href="/recycling">Tri-State Recycling <span class="arr"></span></a>
   </div>
   <div class="rec-photo rv d2"><img loading="lazy" src="/images/img04.jpg" alt="FeX Group Tri-State Recycling yard, Mingo Junction Ohio"></div>
 </section>
@@ -918,7 +927,7 @@ Certifications: ReMA (Recycled Materials Association), AIST (Association for Iro
       <div class="cert-logo" title="American Coal Ash Association Member"><svg viewBox="0 0 100 32" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="4" y="23" font-family="Arial,sans-serif" font-weight="700" font-size="20" fill="#EDE9E3">ACAA</text><rect x="56" y="6" width="1.5" height="20" fill="rgba(255,255,255,.2)"/><text x="64" y="14" font-family="Arial,sans-serif" font-weight="600" font-size="8.5" fill="#A8BDD0" letter-spacing="1">COAL ASH</text><text x="64" y="25" font-family="Arial,sans-serif" font-weight="600" font-size="8.5" fill="#A8BDD0" letter-spacing="1">ASSOCIATION</text></svg></div>
       <div class="cert-logo" title="Dun &amp; Bradstreet Verified"><svg viewBox="0 0 100 32" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="16" r="11" fill="none" stroke="#52A8F5" stroke-width="1.5"/><text x="10" y="21" font-family="Arial,sans-serif" font-weight="700" font-size="13" fill="#52A8F5">D&amp;B</text><rect x="34" y="6" width="1.5" height="20" fill="rgba(255,255,255,.2)"/><text x="42" y="14" font-family="Arial,sans-serif" font-weight="600" font-size="8.5" fill="#A8BDD0" letter-spacing="1">DUN &amp;</text><text x="42" y="25" font-family="Arial,sans-serif" font-weight="600" font-size="8.5" fill="#A8BDD0" letter-spacing="1">BRADSTREET</text></svg></div>
     </div>
-    <a class="btn btn-outline" onclick="go('about')" style="margin-top:28px">Our Story <span class="arr"></span></a>
+    <a class="btn btn-outline" href="/about" style="margin-top:28px">Our Story <span class="arr"></span></a>
   </div>
   <!-- Fixed: switched to 1-col layout, cards now horizontal rows — no orphan -->
   <div class="about-right">
@@ -955,8 +964,8 @@ Certifications: ReMA (Recycled Materials Association), AIST (Association for Iro
       <p>25+ years of expertise connecting buyers and sellers worldwide. Our team responds within one business day.</p>
     </div>
     <div class="cta-btns">
-      <a class="btn btn-solid" onclick="go('contact')">Get a Quote <span class="arr"></span></a>
-      <a class="btn btn-outline" onclick="go('minerals')">View Our Materials <span class="arr"></span></a>
+      <a class="btn btn-solid" href="/contact">Get a Quote <span class="arr"></span></a>
+      <a class="btn btn-outline" href="/fex-minerals">View Our Materials <span class="arr"></span></a>
     </div>
   </div>
 </div>
@@ -989,7 +998,7 @@ Certifications: ReMA (Recycled Materials Association), AIST (Association for Iro
 
   <div class="page-cta-band">
     <div><div class="label">Have a specific material need?</div><h2 class="bebas" style="font-size:var(--f-3xl);color:var(--white);margin-top:12px">We source to your<br>specifications.</h2></div>
-    <a class="btn btn-solid" onclick="go('contact')">Discuss Your Needs <span class="arr"></span></a>
+    <a class="btn btn-solid" href="/contact">Discuss Your Needs <span class="arr"></span></a>
   </div>
 </div>
 
@@ -1014,7 +1023,7 @@ Certifications: ReMA (Recycled Materials Association), AIST (Association for Iro
     <div class="sfc" style="background:rgba(42,128,204,.06);border:1px solid rgba(42,128,204,.14)">
       <div style="font-family:'Bebas Neue',sans-serif;font-size:36px;color:var(--white);margin-bottom:16px;letter-spacing:.02em;line-height:1.1">Have a challenge<br>not listed here?</div>
       <p class="sfc-desc" style="margin-bottom:28px">Our team has addressed unique material challenges for decades. If you have a sourcing problem, logistics challenge, or processing need — we want to hear it.</p>
-      <a class="btn btn-solid" onclick="go('contact')">Talk to Our Team <span class="arr"></span></a>
+      <a class="btn btn-solid" href="/contact">Talk to Our Team <span class="arr"></span></a>
     </div>
   </div>
 </div>
@@ -1038,7 +1047,7 @@ Certifications: ReMA (Recycled Materials Association), AIST (Association for Iro
     <div class="addl-minerals">
       <div class="label">Additional Minerals</div>
       <p>Barite and other industrial minerals sourced on request through our global supplier network. Talk to our team about your specification.</p>
-      <a class="btn btn-outline" onclick="go('contact')">Discuss a Specification <span class="arr"></span></a>
+      <a class="btn btn-outline" href="/contact">Discuss a Specification <span class="arr"></span></a>
     </div>
   </div>
 
@@ -1052,7 +1061,7 @@ Certifications: ReMA (Recycled Materials Association), AIST (Association for Iro
 
   <div class="page-cta-band">
     <div><div class="label">Work With Us</div><h2 class="bebas" style="font-size:var(--f-3xl);color:var(--white);margin-top:12px">Ready to discuss<br>your material needs?</h2></div>
-    <a class="btn btn-solid" onclick="go('contact')">Get a Quote <span class="arr"></span></a>
+    <a class="btn btn-solid" href="/contact">Get a Quote <span class="arr"></span></a>
   </div>
 </div>
 
@@ -1140,7 +1149,7 @@ Certifications: ReMA (Recycled Materials Association), AIST (Association for Iro
     <p class="ma-compliance">FeX complies with ALL Ohio State and Federal laws.</p>
     <div class="scrap-band">
       <div><h3>We Pay Cash for Scrap</h3><p>Over $1,000,000 back into the Ohio Valley every year.</p></div>
-      <a class="btn btn-white" onclick="go('contact')">Contact Us <span class="arr" style="color:var(--blue)"></span></a>
+      <a class="btn btn-white" href="/contact">Contact Us <span class="arr" style="color:var(--blue)"></span></a>
     </div>
   </div>
 </div>
@@ -1175,7 +1184,7 @@ Certifications: ReMA (Recycled Materials Association), AIST (Association for Iro
   </div>
   <div class="page-cta-band">
     <div><div class="label">Let's Work Together</div><h2 class="bebas" style="font-size:var(--f-3xl);color:var(--white);margin-top:12px">25 Years of Expertise.<br><span style="color:var(--blue2)">Ready to Put to Work.</span></h2></div>
-    <a class="btn btn-solid" onclick="go('contact')">Get a Quote <span class="arr"></span></a>
+    <a class="btn btn-solid" href="/contact">Get a Quote <span class="arr"></span></a>
   </div>
 </div>
 
@@ -1298,6 +1307,27 @@ Certifications: ReMA (Recycled Materials Association), AIST (Association for Iro
   </div>
 </div>
 
+<!-- ══ 404 ══ -->
+<div id="pg-notfound" class="pg">
+  <div class="inner-hero">
+    <div class="inner-hero-bg" style="background-image:url('/images/structural-plate.jpg')"></div>
+    <div class="inner-hero-cnt">
+      <div class="label">Error 404</div>
+      <h1 class="bebas">Page Not Found</h1>
+      <p>The page you were looking for doesn't exist or has moved. Here's where to go instead:</p>
+      <ul class="nf-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/fex-metals">FeX Metals — scrap steel, steel byproducts, non-ferrous</a></li>
+        <li><a href="/fex-minerals">FeX Minerals — gypsum, coal, limestone</a></li>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/recycling">Tri-State Recycling</a></li>
+        <li><a href="/contact">Contact us</a></li>
+      </ul>
+      <p style="margin-top:24px">Or call us at <a href="tel:4126040400" style="color:var(--blue2)">412.604.0400</a>.</p>
+    </div>
+  </div>
+</div>
+
 </div><!-- /page -->
 
 <footer role="contentinfo">
@@ -1314,34 +1344,34 @@ Certifications: ReMA (Recycled Materials Association), AIST (Association for Iro
     <div>
       <div class="ft-col-h">Materials</div>
       <ul class="ft-links">
-        <li><a onclick="go('minerals')">Gypsum</a></li>
-        <li><a onclick="go('minerals')">Coal</a></li>
-        <li><a onclick="go('minerals')">Limestone</a></li>
-        <li><a onclick="go('fex')">Scrap Steel</a></li>
-        <li><a onclick="go('fex')">Steel Byproducts</a></li>
-        <li><a onclick="go('fex')">Non-Ferrous</a></li>
+        <li><a href="/fex-minerals">Gypsum</a></li>
+        <li><a href="/fex-minerals">Coal</a></li>
+        <li><a href="/fex-minerals">Limestone</a></li>
+        <li><a href="/fex-metals">Scrap Steel</a></li>
+        <li><a href="/fex-metals">Steel Byproducts</a></li>
+        <li><a href="/fex-metals">Non-Ferrous</a></li>
       </ul>
     </div>
     <div>
       <div class="ft-col-h">Services</div>
       <ul class="ft-links">
-        <li><a onclick="go('services')">Raw Materials Brokerage</a></li>
-        <li><a onclick="go('services')">Logistics Management</a></li>
-        <li><a onclick="go('services')">Steel Mill Advisory</a></li>
-        <li><a onclick="go('services')">Customized Briquettes</a></li>
-        <li><a onclick="go('services')">On-Site Remediation</a></li>
-        <li><a onclick="go('recycling')">Tri-State Recycling</a></li>
+        <li><a href="/services">Raw Materials Brokerage</a></li>
+        <li><a href="/services">Logistics Management</a></li>
+        <li><a href="/services">Steel Mill Advisory</a></li>
+        <li><a href="/services">Customized Briquettes</a></li>
+        <li><a href="/services">On-Site Remediation</a></li>
+        <li><a href="/recycling">Tri-State Recycling</a></li>
       </ul>
     </div>
     <div>
       <div class="ft-col-h">Company</div>
       <ul class="ft-links">
-        <li><a onclick="go('about')">About FeX Group</a></li>
-        <li><a onclick="go('fex')">FeX Metals</a></li>
-        <li><a onclick="go('minerals')">FeX Minerals</a></li>
-        <li><a onclick="go('recycling')">Recycling</a></li>
-        <li><a onclick="go('contact')">Contact Us</a></li>
-        <li><a onclick="go('privacy')">Privacy Policy</a></li>
+        <li><a href="/about">About FeX Group</a></li>
+        <li><a href="/fex-metals">FeX Metals</a></li>
+        <li><a href="/fex-minerals">FeX Minerals</a></li>
+        <li><a href="/recycling">Recycling</a></li>
+        <li><a href="/contact">Contact Us</a></li>
+        <li><a href="/privacy">Privacy Policy</a></li>
       </ul>
     </div>
   </div>
@@ -1368,7 +1398,8 @@ var PAGE_TITLES = {
   recycling:  'Tri-State Recycling | Cash for Scrap — Mingo Junction OH',
   about:      'About FeX Group | 25 Years of Raw Materials Expertise',
   contact:    'Contact FeX Group | Get a Quote',
-  privacy:    'Privacy Policy | FeX Group'
+  privacy:    'Privacy Policy | FeX Group',
+  notfound:   'Page Not Found | FeX Group'
 };
 
 // ── PER-PAGE META DESCRIPTIONS (each URL is indexed separately) ──
@@ -1380,7 +1411,8 @@ var PAGE_DESC = {
   recycling:  'Tri-State Recycling in Mingo Junction, Ohio pays cash for scrap metals, aluminum cans, and wood pallets. Open to the public Monday to Friday, 7 AM to 3 PM. See what we accept.',
   about:      'Founded in 1998, FeX Group combines over 100 years of iron and steel industry experience across metals, minerals, recycling, and logistics — operating nationally and internationally.',
   contact:    'Contact FeX Group for gypsum supply, scrap steel brokerage, logistics management, or technical advisory. Three Mingo Junction, Ohio locations. We respond within one business day.',
-  privacy:    'How FeX Group collects, uses, and protects information submitted through fexgroup.com.'
+  privacy:    'How FeX Group collects, uses, and protects information submitted through fexgroup.com.',
+  notfound:   'The page you were looking for could not be found.'
 };
 
 // ── REAL URLS: each section gets its own indexable path ──
@@ -1398,11 +1430,13 @@ var statsAnimated = false;
 function setMeta(pg, path) {
   var title = PAGE_TITLES[pg] || PAGE_TITLES.home;
   var desc  = PAGE_DESC[pg] || PAGE_DESC.home;
-  var url   = SITE_ORIGIN + path;
+  var url   = SITE_ORIGIN + (pg === 'notfound' ? '/' : path);
   document.title = title;
   var set = function(sel, attr, val) {
     var el = document.querySelector(sel); if (el) el.setAttribute(attr, val);
   };
+  // Keep unknown URLs out of the index rather than serving a soft 404
+  set('meta[name="robots"]', 'content', pg === 'notfound' ? 'noindex, follow' : 'index, follow');
   set('meta[name="description"]', 'content', desc);
   set('meta[property="og:title"]', 'content', title);
   set('meta[property="og:description"]', 'content', desc);
@@ -1438,8 +1472,9 @@ function go(pg, push) {
     window.scrollTo(0, 0);
     currentPage = pg;
 
-    var path = PAGE_PATHS[pg] || '/';
-    if (push && window.history && history.pushState && location.pathname !== path) {
+    // A not-found view keeps the URL the visitor actually typed
+    var path = (pg === 'notfound') ? location.pathname : (PAGE_PATHS[pg] || '/');
+    if (pg !== 'notfound' && push && window.history && history.pushState && location.pathname !== path) {
       history.pushState({ page: pg }, '', path);
     }
     setMeta(pg, path);
@@ -1470,7 +1505,7 @@ function initRoute() {
   if (path.length > 1) { path = path.replace(/\/+$/, ''); }
   if (!path) { path = '/'; }
   var pg = PATH_PAGES[path];
-  if (!pg) { pg = 'home'; path = '/'; }
+  if (!pg) { go('notfound', false); return; }
   if (window.history && history.replaceState) {
     history.replaceState({ page: pg }, '', path);
   }
@@ -1481,6 +1516,33 @@ function initRoute() {
 window.addEventListener('popstate', function (e) {
   var pg = (e.state && e.state.page) || PATH_PAGES[location.pathname] || 'home';
   go(pg, false);
+});
+
+// Internal links keep real hrefs so crawlers can follow them and keyboard users can tab to
+// them. This intercepts the click and routes client-side instead of doing a full page load.
+// Modifier-clicks, middle-clicks and new-tab clicks fall through to the browser on purpose.
+document.addEventListener('click', function (e) {
+  if (e.defaultPrevented || e.button !== 0) return;
+  if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+  var a = (e.target && e.target.closest) ? e.target.closest('a') : null;
+  if (!a || a.hasAttribute('download')) return;
+  if (a.target && a.target !== '' && a.target !== '_self') return;
+  var href = a.getAttribute('href');
+  if (!href || href.charAt(0) !== '/') return;
+  var path = href.length > 1 ? href.replace(/\/+$/, '') : href;
+  var pg = PATH_PAGES[path];
+  if (!pg) return;
+  e.preventDefault();
+  go(pg);
+});
+
+// Enter / Space activates the clickable material and industry rows
+document.addEventListener('keydown', function (e) {
+  if (e.key !== 'Enter' && e.key !== ' ' && e.key !== 'Spacebar') return;
+  var el = document.activeElement;
+  if (!el || el.getAttribute('role') !== 'link' || !el.getAttribute('onclick')) return;
+  e.preventDefault();
+  el.click();
 });
 
 function openMobile() {
